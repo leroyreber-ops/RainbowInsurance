@@ -1,7 +1,7 @@
 import { Phone, ArrowRight, Shield, Award, Star, Clock, Users, CheckCircle2, Zap, ShieldCheck, Info, ExternalLink, MapPin } from 'lucide-react';
 import { motion } from 'motion/react';
 import SEO from '../components/SEO';
-import ReadMore from '../components/ReadMore';
+import ExpandableText from '../components/ExpandableText';
 
 interface PageProps {
   navigateTo: (page: string) => void;
@@ -190,12 +190,12 @@ export default function MGAInsurance({ navigateTo, openQuoteForm }: PageProps) {
             </div>
           </div>
 
-          <ReadMore>
+          <ExpandableText maxLines={20}>
             <div className="space-y-12">
               <section>
                 <h3 className="text-3xl font-bold mb-6 text-gray-900">Comprehensive MGA Insurance Solutions in Fort Worth</h3>
                 <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                  MGA Insurance has established itself as a premier provider of property insurance solutions, known for its commitment to high-quality protection, innovative coverage options, and exceptional customer service. For residents of Fort Worth, Texas, navigating the complexities of insurance can be daunting, but with MGA Insurance, you gain access to robust policies designed to safeguard your most valuable assets. At Rainbow Insurance Agency, we are proud to serve as your authorized MGA agent, simplifying the insurance process and ensuring you receive the coverage you deserve at an affordable price.
+                  MGA Insurance has established itself as a premier provider of property insurance solutions, known for its commitment to high-quality protection, innovative coverage options, and exceptional customer service. For residents of Fort Worth, Texas, navigating the complexities of insurance    can be daunting, but with MGA Insurance, you gain access to robust policies designed to safeguard your most valuable assets. At Rainbow Insurance Agency, we are proud to serve as your authorized MGA agent, simplifying the insurance process and ensuring you receive the coverage you deserve at an affordable price.
                 </p>
                 <p className="text-lg text-gray-600 leading-relaxed mb-6">
                   Whether you are a homeowner, a renter, or a condo owner, MGA offers tailored solutions that address the unique risks associated with living in Tarrant County. From severe weather events to unexpected property damage, MGA's comprehensive policies provide the peace of mind you need to focus on what matters most. Our team at Rainbow Insurance Agency works tirelessly to ensure that your MGA policy is not just a document, but a reliable safety net that stands ready when you need it most.
@@ -299,7 +299,7 @@ export default function MGAInsurance({ navigateTo, openQuoteForm }: PageProps) {
                 </div>
               </section>
             </div>
-          </ReadMore>
+          </ExpandableText>
         </div>
       </section>
 

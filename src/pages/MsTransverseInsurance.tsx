@@ -1,7 +1,7 @@
 import { Phone, ArrowRight, Shield, Award, Star, Clock, Users, CheckCircle2, Zap, ShieldCheck, MapPin } from 'lucide-react';
 import { motion } from 'motion/react';
 import SEO from '../components/SEO';
-import ReadMore from '../components/ReadMore';
+import ExpandableText from '../components/ExpandableText';
 
 interface PageProps {
   navigateTo: (page: string) => void;
@@ -139,7 +139,7 @@ export default function MsTransverseInsurance({ navigateTo, openQuoteForm }: Pag
             </div>
           </div>
 
-          <ReadMore>
+          <ExpandableText maxLines={20}>
             <div className="space-y-12">
               <section>
                 <h3 className="text-3xl font-bold mb-6 text-gray-900">Comprehensive MS Transverse Insurance Solutions in Fort Worth</h3>
@@ -248,7 +248,7 @@ export default function MsTransverseInsurance({ navigateTo, openQuoteForm }: Pag
                 </div>
               </section>
             </div>
-          </ReadMore>
+          </ExpandableText>
         </div>
       </section>
 

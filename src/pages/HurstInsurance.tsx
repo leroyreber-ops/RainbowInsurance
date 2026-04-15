@@ -1,6 +1,7 @@
 import { Phone, ArrowRight, Shield, Award, Star, Clock, Users, CheckCircle2, MapPin, Zap, Car, Home, Building2, ShieldCheck, Info } from 'lucide-react';
 import { motion } from 'motion/react';
 import SEO from '../components/SEO';
+import ExpandableText from '../components/ExpandableText';
 import { useState } from 'react';
 
 interface PageProps {
@@ -165,47 +166,49 @@ Our independence is your greatest asset. We don't work for the insurance compani
       <section className="py-32 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/pinstriped-suit.png')] opacity-5" />
         <div className="max-w-7xl mx-auto px-4 relative z-10">
-          <div className="grid grid-cols-1 gap-24">
-            {contentBlocks.map((block, idx) => (
-              <motion.div 
-                key={idx}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className={`flex flex-col lg:flex-row gap-16 items-center ${idx % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
-              >
-                <div className="lg:w-1/2">
-                  <div className={`inline-flex items-center gap-3 px-6 py-2 rounded-full text-sm font-black mb-8 shadow-sm border ${
-                    idx % 3 === 0 ? 'bg-rainbow-pink/10 text-rainbow-pink border-rainbow-pink/20' :
-                    idx % 3 === 1 ? 'bg-rainbow-gold/10 text-rainbow-gold border-rainbow-gold/20' :
-                    'bg-slate-900/10 text-slate-900 border-slate-900/20'
-                  }`}>
-                    <Zap className="w-4 h-4" />
-                    <span>Expert Hurst Insurance Advice</span>
+          <ExpandableText maxLines={20}>
+            <div className="grid grid-cols-1 gap-24">
+              {contentBlocks.map((block, idx) => (
+                <motion.div 
+                  key={idx}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className={`flex flex-col lg:flex-row gap-16 items-center ${idx % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
+                >
+                  <div className="lg:w-1/2">
+                    <div className={`inline-flex items-center gap-3 px-6 py-2 rounded-full text-sm font-black mb-8 shadow-sm border ${
+                      idx % 3 === 0 ? 'bg-rainbow-pink/10 text-rainbow-pink border-rainbow-pink/20' :
+                      idx % 3 === 1 ? 'bg-rainbow-gold/10 text-rainbow-gold border-rainbow-gold/20' :
+                      'bg-slate-900/10 text-slate-900 border-slate-900/20'
+                    }`}>
+                      <Zap className="w-4 h-4" />
+                      <span>Expert Hurst Insurance Advice</span>
+                    </div>
+                    <h2 className="text-4xl md:text-6xl font-black mb-8 text-gray-900 leading-tight">{block.title}</h2>
+                    <div className="text-xl text-gray-600 leading-relaxed font-medium space-y-6">
+                      {block.content.split('\n\n').map((para, pIdx) => (
+                        <p key={pIdx}>{para}</p>
+                      ))}
+                    </div>
                   </div>
-                  <h2 className="text-4xl md:text-6xl font-black mb-8 text-gray-900 leading-tight">{block.title}</h2>
-                  <div className="text-xl text-gray-600 leading-relaxed font-medium space-y-6">
-                    {block.content.split('\n\n').map((para, pIdx) => (
-                      <p key={pIdx}>{para}</p>
-                    ))}
+                  <div className="lg:w-1/2 relative group">
+                    <div className={`absolute inset-0 rounded-[4rem] rotate-3 scale-105 opacity-10 group-hover:rotate-6 transition-transform ${
+                      idx % 3 === 0 ? 'bg-rainbow-pink' :
+                      idx % 3 === 1 ? 'bg-rainbow-gold' :
+                      'bg-slate-900'
+                    }`} />
+                    <img 
+                      src={`https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=1600&h=900&fit=crop`} 
+                      alt={block.title} 
+                      className="relative z-10 rounded-[4rem] shadow-3xl border-8 border-white w-full h-[500px] object-cover"
+                      referrerPolicy="no-referrer"
+                    />
                   </div>
-                </div>
-                <div className="lg:w-1/2 relative group">
-                  <div className={`absolute inset-0 rounded-[4rem] rotate-3 scale-105 opacity-10 group-hover:rotate-6 transition-transform ${
-                    idx % 3 === 0 ? 'bg-rainbow-pink' :
-                    idx % 3 === 1 ? 'bg-rainbow-gold' :
-                    'bg-slate-900'
-                  }`} />
-                  <img 
-                    src={`https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=1600&h=900&fit=crop`} 
-                    alt={block.title} 
-                    className="relative z-10 rounded-[4rem] shadow-3xl border-8 border-white w-full h-[500px] object-cover"
-                    referrerPolicy="no-referrer"
-                  />
-                </div>
-              </motion.div>
-            ))}
-          </div>
+                </motion.div>
+              ))}
+            </div>
+          </ExpandableText>
         </div>
       </section>
 

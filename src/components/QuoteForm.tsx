@@ -18,13 +18,42 @@ export default function QuoteForm({ isOpen, onClose, pageSource, isInline }: Quo
     message: ''
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   if (!isOpen && !isInline) return null;
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', { ...formData, pageSource });
-    alert('Thank you! Susan and her expert team will contact you shortly with the best rates in Fort Worth!');
-    if (onClose) onClose();
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('/api/submit-form', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ ...formData, pageSource }),
+      });
+
+      if (response.ok) {
+        alert('Thank you! Susan and her expert team will contact you shortly with the best rates in Fort Worth!');
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          insuranceType: 'auto',
+          message: ''
+        });
+        if (onClose) onClose();
+      } else {
+        throw new Error('Failed to submit');
+      }
+    } catch (error) {
+      console.error('Submission error:', error);
+      alert('There was an error submitting your request. Please call us directly at 817-922-8031.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const formContent = (
@@ -115,9 +144,10 @@ export default function QuoteForm({ isOpen, onClose, pageSource, isInline }: Quo
 
         <button 
           type="submit"
-          className="w-full bg-gradient-to-r from-rainbow-gold to-rainbow-amber text-white py-3 rounded-xl font-bold text-lg hover:scale-[1.02] active:scale-[0.98] transition-all shadow-lg mt-2 flex items-center justify-center gap-2"
+          disabled={isSubmitting}
+          className={`w-full bg-gradient-to-r from-rainbow-gold to-rainbow-amber text-white py-3 rounded-xl font-bold text-lg hover:scale-[1.02] active:scale-[0.98] transition-all shadow-lg mt-2 flex items-center justify-center gap-2 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
         >
-          Get My Free Quote Now!
+          {isSubmitting ? 'Sending...' : 'Get My Free Quote Now!'}
         </button>
         
         <p className="text-center text-[10px] text-gray-400 mt-2 leading-tight">

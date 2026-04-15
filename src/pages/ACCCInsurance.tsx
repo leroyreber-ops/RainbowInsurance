@@ -180,67 +180,12 @@ export default function ACCCInsurance({ navigateTo, openQuoteForm }: PageProps) 
       {/* SEO Content Section */}
       <section className="py-24 bg-white">
         <div className="max-w-5xl mx-auto px-4">
-          <div className="space-y-12 prose prose-lg max-w-none">
-            <section>
-              <h2 className="text-3xl font-black text-gray-900 mb-6 text-center">ACCC Insurance in Fort Worth: Affordable Auto Protection for Every Driver</h2>
-              <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                In the bustling city of Fort Worth, where the commute can take you from the historic Stockyards to the modern skyline of Sundance Square, having reliable and affordable auto insurance is not just a legal requirement—it's a necessity for peace of mind. ACCC Insurance has built a reputation for providing accessible auto protection, particularly for drivers who may find it challenging to secure coverage with standard carriers. At Rainbow Insurance Agency, we are proud to be an authorized agent for ACCC, bringing their specialized solutions to our neighbors in Tarrant County. Whether you're a first-time driver, someone with a less-than-perfect driving record, or simply looking for the most budget-friendly option, ACCC Insurance offers a path to staying legal and protected on the Texas roads.
-              </p>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                The DFW metroplex is known for its heavy traffic and complex highway systems, including I-35W and I-30. In this environment, the risk of accidents is a daily reality. ACCC Insurance focuses on the essentials, providing robust liability coverage that meets or exceeds Texas state requirements. This ensures that if you're involved in an accident, your financial assets are protected against claims for bodily injury and property damage. At Rainbow Insurance Agency, Susan and her expert team understand the nuances of ACCC's policies and can help you navigate the options to find the perfect balance of price and protection. We've been serving the Fort Worth community since 1993, and we know that for many of our clients, ACCC represents the most viable and valuable choice for their auto insurance needs.
-              </p>
-            </section>
-
-            <section className="bg-white rounded-3xl p-8 shadow-sm border border-gray-100">
-              <h3 className="text-2xl font-black text-gray-900 mb-6">Specialized Solutions for Non-Standard Drivers</h3>
-              <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                One of the primary strengths of ACCC Insurance is its commitment to the "non-standard" insurance market. This includes drivers who may have had previous accidents, violations, or lapses in coverage. While many national carriers might turn these drivers away or charge exorbitant premiums, ACCC specializes in assessing these risks and providing fair, competitive rates. Susan and her expert team at Rainbow Insurance are masters at working with ACCC to secure coverage for our clients who need it most. We believe that everyone deserves the opportunity to be insured and to drive with confidence. By shopping 56 carriers, including ACCC, we ensure that we're exploring every possible avenue to find you the absolute lowest rates, regardless of your driving history.
-              </p>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                We also understand that life happens, and sometimes your insurance needs change. If you've recently moved to Fort Worth, started a new job with a longer commute, or added a teen driver to your policy, ACCC offers the flexibility to adjust your coverage accordingly. Their policies are designed to be straightforward and easy to understand, with no hidden fees or complex jargon. We take the time to explain every detail of your ACCC policy, ensuring that you know exactly what you're paying for and what your coverage includes. This transparency is a hallmark of the Rainbow Insurance experience and is why we've been the trusted choice for Tarrant County for over three decades.
-              </p>
-            </section>
-
-            <section>
-              <h3 className="text-2xl font-black text-gray-900 mb-6">Flexible Payment Options: Insurance That Fits Your Budget</h3>
-              <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                For many Fort Worth families, managing the monthly budget is a top priority. ACCC Insurance recognizes this and offers a variety of flexible payment plans designed to fit your financial situation. Whether you prefer to pay in full for a discount or need to spread your payments out over the course of the policy term, ACCC has an option that works for you. At Rainbow Insurance Agency, we'll help you explore these payment structures and find the one that best aligns with your cash flow. We believe that high-quality insurance should be accessible to everyone, and flexible payments are a key part of that accessibility.
-              </p>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                In addition to flexible payments, ACCC also offers a range of discounts that can further lower your premiums. From multi-car discounts to savings for safe driving and vehicle safety features, there are many ways to save. Susan and her expert team will conduct a thorough review of your situation to ensure you're receiving every possible cent of savings. We're proactive in our approach, always looking for ways to put more money back in your pocket while keeping you fully protected. This commitment to value is a core value at Rainbow Insurance and is why we've been able to help thousands of Fort Worth residents save on their auto insurance.
-              </p>
-            </section>
-
-            <section className="bg-slate-900 text-white rounded-3xl p-8 shadow-xl">
-              <h3 className="text-2xl font-black mb-6 text-rainbow-gold">Claims and Support: Reliability When It Matters Most</h3>
-              <p className="text-lg text-white/80 leading-relaxed mb-6">
-                The true value of an insurance policy is revealed when you have a claim. ACCC Insurance is committed to providing efficient and fair claims handling, ensuring that you get the support you need during a difficult time. They offer a streamlined claims process, with dedicated adjusters who work to resolve your case as quickly as possible. At Rainbow Insurance Agency, we're here to advocate for you throughout the entire claims experience. We can help you file the initial report, gather the necessary documentation, and communicate with the ACCC claims team. Our goal is to ensure that your claim is handled with the integrity and speed you deserve, so you can get back to your normal routine in Fort Worth.
-              </p>
-              <p className="text-lg text-white/80 leading-relaxed">
-                We also provide ongoing support to our ACCC policyholders. As your life changes, we're here to ensure your insurance keeps pace. Whether you're buying a new car, moving to a different part of Tarrant County, or simply have questions about your coverage, Susan and her expert team are just a phone call away. We believe in building long-term relationships with our clients, providing the expert guidance and personal service that you won't find at a national call center. This local presence is invaluable, especially when you're dealing with the complexities of the insurance market.
-              </p>
-            </section>
-
-            <section>
-              <h3 className="text-2xl font-black text-gray-900 mb-6">Local Expertise: The Rainbow Insurance Advantage</h3>
-              <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                Choosing ACCC Insurance through Rainbow Insurance Agency means you're getting more than just a policy; you're getting a partner in your protection. We've been a part of the Fort Worth community since 1993, and we understand the local market better than anyone. We know the specific risks of driving in North Texas, from the potential for hail damage to the challenges of navigating construction zones on I-820. This local knowledge allows us to provide more accurate advice and to tailor your ACCC policy to your specific needs. We're not just selling insurance; we're providing peace of mind to our neighbors.
-              </p>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                Our independence is your greatest asset. While we are proud to represent ACCC, we also shop 56 other A+ rated carriers. This means we can compare ACCC's rates and coverage with the entire market to ensure you're getting the absolute best deal. If ACCC is the best fit for you today, but your needs change tomorrow, we have the flexibility to move you to another carrier without any interruption in your protection. We work for YOU, not the insurance company. This commitment to our clients' best interests is the foundation of our success and the reason why we've been the top-rated agency in Fort Worth for over 30 years.
-              </p>
-            </section>
-
-            <section className="bg-rainbow-pink/5 rounded-3xl p-8 border border-rainbow-pink/10">
-              <h3 className="text-2xl font-black text-gray-900 mb-6">Get Your ACCC Quote Today: Start Saving in Fort Worth</h3>
-              <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                Don't wait until you're in an accident to find out if you have the right protection at the right price. Call Rainbow Insurance Agency today at 817-922-8031 and let Susan and her expert team find you the best ACCC Insurance rates in Fort Worth. We'll take the time to listen to your needs, answer your questions, and provide a free, no-obligation quote. Experience the Rainbow difference and see why thousands of your neighbors trust us with their auto insurance. We're here to help you protect what matters most, with the affordability of ACCC and the expertise of Rainbow Insurance.
-              </p>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                Believe in us to find you the absolute lowest rates and the best service in Tarrant County. We've been the trusted choice for Fort Worth since 1993 because we treat every client like family. Whether you're looking for basic liability or comprehensive protection, we have the carriers and the experience to find the perfect solution for you. Let's start building your perfect protection plan today.
-              </p>
-            </section>
-          </div>
+          <ExpandableText 
+            className="prose prose-lg max-w-none"
+            buttonClassName="text-rainbow-pink"
+          >
+            {seoContent}
+          </ExpandableText>
         </div>
       </section>
 

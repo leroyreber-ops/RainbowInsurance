@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import { Shield, CheckCircle2, Star, ArrowRight, Phone, Car, Zap, Heart, Award, AlertTriangle, Info, Scale } from 'lucide-react';
 import SEO from '../components/SEO';
+import ExpandableText from '../components/ExpandableText';
 
 interface PageProps {
   navigateTo: (page: string) => void;
@@ -162,22 +163,24 @@ export default function FortWorthUninsuredMotoristCoverage({ navigateTo, openQuo
       {/* Extensive Content Section */}
       <section className="py-24 bg-white">
         <div className="max-w-4xl mx-auto px-4 space-y-12">
-          <div className="prose prose-2xl prose-gray max-w-none font-medium leading-relaxed text-gray-600">
-            <h2 className="text-4xl font-black text-gray-900 mb-8">The Vital Importance of UM/UIM in Texas</h2>
-            <p>
-              At Rainbow Insurance Agency, we believe that your safety shouldn't depend on the choices of other drivers. Unfortunately, in Fort Worth and across Texas, many drivers choose to ignore the law and drive without insurance. Others carry only the bare minimum liability limits, which are often insufficient to cover the costs of a serious accident. This is where Uninsured/Underinsured Motorist (UM/UIM) coverage becomes your most valuable asset. Susan and her team have been educating North Texas drivers on the importance of this coverage since 1993.
-            </p>
-            <p>
-              Think of UM/UIM as insurance for yourself. While liability insurance protects others from your mistakes, UM/UIM protects you from the mistakes of others. If you're involved in an accident with an at-fault driver who has no insurance, your UM coverage will step in to pay for your medical bills, lost wages, and car repairs. If the other driver has insurance but their limits are too low to cover your total damages, your UIM coverage will pay the difference up to your policy limits.
-            </p>
-            <h3 className="text-3xl font-black text-gray-900 mt-12 mb-6">A Small Price for Massive Protection</h3>
-            <p>
-              One of the most common reasons people skip UM/UIM coverage is to save a few dollars on their monthly premium. However, Susan always points out that the cost of adding this protection is typically very low—often just a few dollars a month. Compared to the potential financial devastation of a major accident with an uninsured driver, it's one of the best values in the insurance world.
-            </p>
-            <p>
-              Susan's commitment to "Best Service" means we don't just check a box on your application. We take the time to explain how UM/UIM works, why it's so important in our local Fort Worth environment, and help you choose limits that provide real security for your family. Trust Susan and her team to ensure you're protected from the unexpected on North Texas roads.
-            </p>
-          </div>
+          <ExpandableText>
+            <div className="prose prose-2xl prose-gray max-w-none font-medium leading-relaxed text-gray-600">
+              <h2 className="text-4xl font-black text-gray-900 mb-8">The Vital Importance of UM/UIM in Texas</h2>
+              <p>
+                At Rainbow Insurance Agency, we believe that your safety shouldn't depend on the choices of other drivers. Unfortunately, in Fort Worth and across Texas, many drivers choose to ignore the law and drive without insurance. Others carry only the bare minimum liability limits, which are often insufficient to cover the costs of a serious accident. This is where Uninsured/Underinsured Motorist (UM/UIM) coverage becomes your most valuable asset. Susan and her team have been educating North Texas drivers on the importance of this coverage since 1993.
+              </p>
+              <p>
+                Think of UM/UIM as insurance for yourself. While liability insurance protects others from your mistakes, UM/UIM protects you from the mistakes of others. If you're involved in an accident with an at-fault driver who has no insurance, your UM coverage will step in to pay for your medical bills, lost wages, and car repairs. If the other driver has insurance but their limits are too low to cover your total damages, your UIM coverage will pay the difference up to your policy limits.
+              </p>
+              <h3 className="text-3xl font-black text-gray-900 mt-12 mb-6">A Small Price for Massive Protection</h3>
+              <p>
+                One of the most common reasons people skip UM/UIM coverage is to save a few dollars on their monthly premium. However, Susan always points out that the cost of adding this protection is typically very low—often just a few dollars a month. Compared to the potential financial devastation of a major accident with an uninsured driver, it's one of the best values in the insurance world.
+              </p>
+              <p>
+                Susan's commitment to "Best Service" means we don't just check a box on your application. We take the time to explain how UM/UIM works, why it's so important in our local Fort Worth environment, and help you choose limits that provide real security for your family. Trust Susan and her team to ensure you're protected from the unexpected on North Texas roads.
+              </p>
+            </div>
+          </ExpandableText>
           
           <div className="bg-slate-50 p-12 rounded-[3rem] border border-gray-100 text-center">
             <Shield className="w-16 h-16 text-rainbow-gold mx-auto mb-6" />

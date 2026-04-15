@@ -11,6 +11,48 @@ interface PageProps {
 export default function ContactUs({ navigateTo, openQuoteForm }: PageProps) {
   const [expandedSections, setExpandedSections] = useState<Record<string, boolean>>({});
 
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    email: '',
+    subject: 'General Inquiry',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('/api/submit-form', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ ...formData, pageSource: '/contact' }),
+      });
+
+      if (response.ok) {
+        alert('Thank you! Susan and her expert team will contact you shortly.');
+        setFormData({
+          name: '',
+          phone: '',
+          email: '',
+          subject: 'General Inquiry',
+          message: ''
+        });
+      } else {
+        throw new Error('Failed to submit');
+      }
+    } catch (error) {
+      console.error('Submission error:', error);
+      alert('There was an error submitting your request. Please call us directly at 817-922-8031.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   const toggleSection = (id: string) => {
     setExpandedSections(prev => ({ ...prev, [id]: !prev[id] }));
   };
@@ -152,24 +194,49 @@ export default function ContactUs({ navigateTo, openQuoteForm }: PageProps) {
                 Have a specific question or request? Fill out the form below, and one of our experts from Susan and her expert team will get back to you as soon as possible.
               </p>
               
-              <div className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-bold text-gray-700 mb-2">Full Name</label>
-                    <input type="text" className="w-full px-6 py-4 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-rainbow-pink focus:border-transparent transition-all outline-none" placeholder="John Doe" />
+                    <input 
+                      type="text" 
+                      required
+                      className="w-full px-6 py-4 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-rainbow-pink focus:border-transparent transition-all outline-none" 
+                      placeholder="John Doe"
+                      value={formData.name}
+                      onChange={e => setFormData({...formData, name: e.target.value})}
+                    />
                   </div>
                   <div>
                     <label className="block text-sm font-bold text-gray-700 mb-2">Phone Number</label>
-                    <input type="tel" className="w-full px-6 py-4 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-rainbow-pink focus:border-transparent transition-all outline-none" placeholder="(817) 000-0000" />
+                    <input 
+                      type="tel" 
+                      required
+                      className="w-full px-6 py-4 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-rainbow-pink focus:border-transparent transition-all outline-none" 
+                      placeholder="(817) 000-0000"
+                      value={formData.phone}
+                      onChange={e => setFormData({...formData, phone: e.target.value})}
+                    />
                   </div>
                 </div>
                 <div>
                   <label className="block text-sm font-bold text-gray-700 mb-2">Email Address</label>
-                  <input type="email" className="w-full px-6 py-4 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-rainbow-pink focus:border-transparent transition-all outline-none" placeholder="john@example.com" />
+                  <input 
+                    type="email" 
+                    required
+                    className="w-full px-6 py-4 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-rainbow-pink focus:border-transparent transition-all outline-none" 
+                    placeholder="john@example.com"
+                    value={formData.email}
+                    onChange={e => setFormData({...formData, email: e.target.value})}
+                  />
                 </div>
                 <div>
                   <label className="block text-sm font-bold text-gray-700 mb-2">Subject</label>
-                  <select className="w-full px-6 py-4 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-rainbow-pink focus:border-transparent transition-all outline-none">
+                  <select 
+                    className="w-full px-6 py-4 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-rainbow-pink focus:border-transparent transition-all outline-none"
+                    value={formData.subject}
+                    onChange={e => setFormData({...formData, subject: e.target.value})}
+                  >
                     <option>General Inquiry</option>
                     <option>New Quote Request</option>
                     <option>Policy Question</option>
@@ -179,13 +246,24 @@ export default function ContactUs({ navigateTo, openQuoteForm }: PageProps) {
                 </div>
                 <div>
                   <label className="block text-sm font-bold text-gray-700 mb-2">Your Message</label>
-                  <textarea rows={6} className="w-full px-6 py-4 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-rainbow-pink focus:border-transparent transition-all outline-none" placeholder="How can we help you today?"></textarea>
+                  <textarea 
+                    rows={6} 
+                    required
+                    className="w-full px-6 py-4 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-rainbow-pink focus:border-transparent transition-all outline-none" 
+                    placeholder="How can we help you today?"
+                    value={formData.message}
+                    onChange={e => setFormData({...formData, message: e.target.value})}
+                  ></textarea>
                 </div>
-                <button className="w-full bg-rainbow-pink hover:bg-rainbow-rose text-white px-10 py-5 rounded-xl font-bold text-xl transition-all shadow-xl flex items-center justify-center gap-3">
+                <button 
+                  type="submit"
+                  disabled={isSubmitting}
+                  className={`w-full bg-rainbow-pink hover:bg-rainbow-rose text-white px-10 py-5 rounded-xl font-bold text-xl transition-all shadow-xl flex items-center justify-center gap-3 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
+                >
                   <Send className="w-6 h-6" />
-                  Send Message
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>
-              </div>
+              </form>
             </div>
 
             <div className="sticky top-24">

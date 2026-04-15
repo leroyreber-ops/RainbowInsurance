@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import { Shield, CheckCircle2, Star, ArrowRight, Phone, Car, Zap, Heart, Award, AlertTriangle, Scale, Info } from 'lucide-react';
 import SEO from '../components/SEO';
+import ExpandableText from '../components/ExpandableText';
 
 interface PageProps {
   navigateTo: (page: string) => void;
@@ -168,22 +169,24 @@ export default function FortWorthTexasMinimumAutoInsurance({ navigateTo, openQuo
       {/* Extensive Content Section */}
       <section className="py-24 bg-white">
         <div className="max-w-4xl mx-auto px-4 space-y-12">
-          <div className="prose prose-2xl prose-gray max-w-none font-medium leading-relaxed text-gray-600">
-            <h2 className="text-4xl font-black text-gray-900 mb-8">Staying Legal on a Budget in Fort Worth</h2>
-            <p>
-              We understand that for many Fort Worth residents, insurance is a significant monthly expense. If you're looking for the absolute lowest cost to meet the legal requirements in Texas, "minimum liability" is the way to go. At Rainbow Insurance Agency, Susan and her team have been helping drivers find affordable 30/60/25 coverage since 1993. We believe that everyone deserves access to the protection they need to drive legally and confidently.
-            </p>
-            <p>
-              Texas law is very clear: you must be able to pay for any accidents you cause. The 30/60/25 limits are the minimum amounts the state requires. While these limits provide a basic level of protection, it's important to understand that they only pay for the other person's injuries and property damage. They do not provide any coverage for your own vehicle or your own medical bills.
-            </p>
-            <h3 className="text-3xl font-black text-gray-900 mt-12 mb-6">Why Shop with an Independent Agent?</h3>
-            <p>
-              If you go to a major "brand name" insurance company for minimum liability, you might be surprised by the high cost. These companies often prefer "preferred" drivers with high limits. Susan and her team, however, have access to 56+ carriers, including many that specialize in "non-standard" or "liability-only" policies. These companies are often much more affordable for drivers who just need to get legal.
-            </p>
-            <p>
-              Susan's commitment to "Best Service" means we don't just give you the first price we find. We shop the market, compare discounts, and find the policy that fits your budget perfectly. Whether you're a student, a senior, or just looking to save money, we're here to help you find the best value in Fort Worth.
-            </p>
-          </div>
+          <ExpandableText>
+            <div className="prose prose-2xl prose-gray max-w-none font-medium leading-relaxed text-gray-600">
+              <h2 className="text-4xl font-black text-gray-900 mb-8">Staying Legal on a Budget in Fort Worth</h2>
+              <p>
+                We understand that for many Fort Worth residents, insurance is a significant monthly expense. If you're looking for the absolute lowest cost to meet the legal requirements in Texas, "minimum liability" is the way to go. At Rainbow Insurance Agency, Susan and her team have been helping drivers find affordable 30/60/25 coverage since 1993. We believe that everyone deserves access to the protection they need to drive legally and confidently.
+              </p>
+              <p>
+                Texas law is very clear: you must be able to pay for any accidents you cause. The 30/60/25 limits are the minimum amounts the state requires. While these limits provide a basic level of protection, it's important to understand that they only pay for the other person's injuries and property damage. They do not provide any coverage for your own vehicle or your own medical bills.
+              </p>
+              <h3 className="text-3xl font-black text-gray-900 mt-12 mb-6">Why Shop with an Independent Agent?</h3>
+              <p>
+                If you go to a major "brand name" insurance company for minimum liability, you might be surprised by the high cost. These companies often prefer "preferred" drivers with high limits. Susan and her team, however, have access to 56+ carriers, including many that specialize in "non-standard" or "liability-only" policies. These companies are often much more affordable for drivers who just need to get legal.
+              </p>
+              <p>
+                Susan's commitment to "Best Service" means we don't just give you the first price we find. We shop the market, compare discounts, and find the policy that fits your budget perfectly. Whether you're a student, a senior, or just looking to save money, we're here to help you find the best value in Fort Worth.
+              </p>
+            </div>
+          </ExpandableText>
           
           <div className="bg-slate-50 p-12 rounded-[3rem] border border-gray-100 text-center">
             <Car className="w-16 h-16 text-rainbow-gold mx-auto mb-6" />

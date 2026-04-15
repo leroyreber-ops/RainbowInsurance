@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import { Shield, CheckCircle2, Star, ArrowRight, Phone, Home, Zap, Heart, Award, Info, Clock, Umbrella } from 'lucide-react';
 import SEO from '../components/SEO';
+import ExpandableText from '../components/ExpandableText';
 
 interface PageProps {
   navigateTo: (page: string) => void;
@@ -162,22 +163,24 @@ export default function FortWorthUmbrellaInsurance({ navigateTo, openQuoteForm }
       {/* Extensive Content Section */}
       <section className="py-24 bg-white">
         <div className="max-w-4xl mx-auto px-4 space-y-12">
-          <div className="prose prose-2xl prose-gray max-w-none font-medium leading-relaxed text-gray-600">
-            <h2 className="text-4xl font-black text-gray-900 mb-8">Protecting Your Future in Fort Worth</h2>
-            <p>
-              At Rainbow Insurance Agency, we know that you've worked hard to build your life and your assets. In Fort Worth, where legal judgments can be significant, having an extra layer of protection is essential. Susan and her team have been helping local residents find affordable and robust umbrella insurance since 1993, providing the expert knowledge needed for total peace of mind.
-            </p>
-            <p>
-              Umbrella insurance is designed to provide additional liability coverage that kicks in when your standard auto or home insurance limits are exhausted. For example, if you're at fault in a serious car accident and the damages exceed your auto policy's liability limit, your umbrella policy would cover the remaining balance, protecting your savings and your home from being seized. Susan and her team specialize in finding policies that provide this critical safety net for a very low cost.
-            </p>
-            <h3 className="text-3xl font-black text-gray-900 mt-12 mb-6">Tailored to Your Assets and Your Life</h3>
-            <p>
-              We offer umbrella insurance options from top-rated carriers, allowing us to find the perfect fit for your specific needs and budget. Whether you're looking for $1 million in extra protection or $5 million, Susan and her team will help you navigate the options. We'll explain the importance of having a policy that covers a wide range of liability risks, including those that may not be included in your standard policies.
-            </p>
-            <p>
-              Susan's commitment to "Best Service" means we're here to be your partner in protection. We'll proactively review your policy as your assets grow and your life changes. If you ever have to file a claim, we'll be there to advocate for you and ensure the process is handled efficiently, so you can focus on your future. Trust Susan and her team to help you protect your life and your legacy.
-            </p>
-          </div>
+          <ExpandableText>
+            <div className="prose prose-2xl prose-gray max-w-none font-medium leading-relaxed text-gray-600">
+              <h2 className="text-4xl font-black text-gray-900 mb-8">Protecting Your Future in Fort Worth</h2>
+              <p>
+                At Rainbow Insurance Agency, we know that you've worked hard to build your life and your assets. In Fort Worth, where legal judgments can be significant, having an extra layer of protection is essential. Susan and her team have been helping local residents find affordable and robust umbrella insurance since 1993, providing the expert knowledge needed for total peace of mind.
+              </p>
+              <p>
+                Umbrella insurance is designed to provide additional liability coverage that kicks in when your standard auto or home insurance limits are exhausted. For example, if you're at fault in a serious car accident and the damages exceed your auto policy's liability limit, your umbrella policy would cover the remaining balance, protecting your savings and your home from being seized. Susan and her team specialize in finding policies that provide this critical safety net for a very low cost.
+              </p>
+              <h3 className="text-3xl font-black text-gray-900 mt-12 mb-6">Tailored to Your Assets and Your Life</h3>
+              <p>
+                We offer umbrella insurance options from top-rated carriers, allowing us to find the perfect fit for your specific needs and budget. Whether you're looking for $1 million in extra protection or $5 million, Susan and her team will help you navigate the options. We'll explain the importance of having a policy that covers a wide range of liability risks, including those that may not be included in your standard policies.
+              </p>
+              <p>
+                Susan's commitment to "Best Service" means we're here to be your partner in protection. We'll proactively review your policy as your assets grow and your life changes. If you ever have to file a claim, we'll be there to advocate for you and ensure the process is handled efficiently, so you can focus on your future. Trust Susan and her team to help you protect your life and your legacy.
+              </p>
+            </div>
+          </ExpandableText>
           
           <div className="bg-slate-50 p-12 rounded-[3rem] border border-gray-100 text-center">
             <Umbrella className="w-16 h-16 text-rainbow-gold mx-auto mb-6" />
