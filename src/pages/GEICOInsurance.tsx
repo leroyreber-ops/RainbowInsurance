@@ -1,6 +1,7 @@
 import { Phone, ArrowRight, Shield, Award, Star, Clock, Users, CheckCircle2, Zap, ShieldCheck, Info, ExternalLink, MapPin } from 'lucide-react';
 import { motion } from 'motion/react';
 import SEO from '../components/SEO';
+import ExpandableText from '../components/ExpandableText';
 
 interface PageProps {
   navigateTo: (page: string) => void;
@@ -25,44 +26,88 @@ export default function GEICOInsurance({ navigateTo, openQuoteForm }: PageProps)
     }
   };
 
-  const contentBlocks = [
-    {
-      title: "GEICO Insurance in Fort Worth: Savings You Can Count On",
-      content: `GEICO is one of the most recognizable and trusted names in insurance, known for its commitment to providing high-quality protection and exceptional savings. As an authorized GEICO agent in Fort Worth, Rainbow Insurance Agency is proud to offer our clients access to their extensive range of products, including auto, motorcycle, and RV insurance.
+  const seoContent = `
+    <div className="space-y-12">
+      <section>
+        <h2 className="text-3xl font-black text-gray-900 mb-6 text-center">GEICO Insurance in Fort Worth: Savings You Can Count On</h2>
+        <p className="text-lg text-gray-600 leading-relaxed mb-6">
+          GEICO is one of the most recognizable and trusted names in insurance, known for its commitment to providing high-quality protection and exceptional savings. As an authorized GEICO agent in Fort Worth, Rainbow Insurance Agency is proud to offer our clients access to their extensive range of products, including auto, motorcycle, and RV insurance. We understand that finding the right insurance can be overwhelming, which is why Susan and her expert team are dedicated to making the process simple, transparent, and affordable.
+        </p>
+        <p className="text-lg text-gray-600 leading-relaxed">
+          When you choose GEICO through Rainbow Insurance, you're getting the combined expertise of Susan and her expert team. We understand how to navigate GEICO's sophisticated rating system to find the absolute lowest rates for your specific needs. GEICO is particularly strong in the standard auto market, often offering the best value for clients with good driving records in the DFW metroplex. We take the time to explain the nuances of GEICO's policies, helping you understand the unique features and benefits available. We believe in transparency and personalized service, ensuring that every client feels confident in their protection. By shopping 56+ carriers, including GEICO, we ensure you're getting the most competitive options available in the market.
+        </p>
+        <p className="text-lg text-gray-600 leading-relaxed mt-6">
+          Our deep roots in Fort Worth allow us to provide a level of service that national carriers simply cannot match. We understand the local landscape, the specific risks of our region, and the values of our community. When you choose GEICO through Rainbow Insurance, you're not just getting a policy; you're getting a dedicated partner who is committed to your long-term success and security. We're here to answer your questions, advocate for your interests, and provide the expert guidance you need to navigate the complexities of the insurance market.
+        </p>
+      </section>
 
-When you choose GEICO through Rainbow Insurance, you're getting the combined expertise of Susan and her expert team. We understand how to navigate GEICO's sophisticated rating system to find the absolute lowest rates for your specific needs. GEICO is particularly strong in the standard auto market, often offering the best value for clients with good driving records in the DFW metroplex.
+      <section className="bg-white rounded-3xl p-8 shadow-sm border border-gray-100">
+        <h3 className="text-2xl font-black text-gray-900 mb-6">The Advantages of GEICO Insurance with Rainbow Insurance Agency</h3>
+        <p className="text-lg text-gray-600 leading-relaxed mb-6">
+          Working with an independent agent like Rainbow Insurance Agency to secure your GEICO policy offers several key advantages. First is our local expertise. We know the Fort Worth and Dallas areas, and we understand the unique risks and requirements of Texas drivers. We can provide personalized advice that you won't get from a generic call center.
+        </p>
+        <p className="text-lg text-gray-600 leading-relaxed mb-6">
+          GEICO is known for its commitment to providing "Insurance for the Way You Live," focusing on comprehensive coverage and competitive pricing. They understand that everyone's situation is unique, and they work to provide coverage that fits your life and budget. This shared commitment to personal service and flexibility makes GEICO a natural fit for our clients.
+        </p>
+        <p className="text-lg text-gray-600 leading-relaxed">
+          Furthermore, GEICO offers a variety of specialized discounts that we can help you unlock. From multi-policy savings to discounts for safe driving and vehicle safety features, we'll make sure you're taking full advantage of every opportunity to lower your premium. We've been serving the North Texas community since 1993, and our reputation for integrity and honesty is built on finding the best solutions for our clients.
+        </p>
+      </section>
 
-Our team doesn't just stop at one quote. We compare GEICO's offerings with our 56+ other A+ rated carriers to ensure you're getting the absolute best deal available in Tarrant County. We believe in providing the best service and the best rates, and GEICO is a key partner in helping us achieve that for our clients.`
-    },
-    {
-      title: "The Advantages of GEICO Insurance with Rainbow Insurance Agency",
-      content: `Working with an independent agent like Rainbow Insurance Agency to secure your GEICO policy offers several key advantages. First is our local expertise. We know the Fort Worth and Dallas areas, and we understand the unique risks and requirements of Texas drivers. We can provide personalized advice that you won't get from a generic call center.
+      <section>
+        <h3 className="text-2xl font-black text-gray-900 mb-6">GEICO Auto & Specialty Insurance Features</h3>
+        <p className="text-lg text-gray-600 leading-relaxed mb-6">
+          GEICO specializes in providing comprehensive insurance coverage for vehicles. Some of the key features of their policies include:
+        </p>
+        <ul className="list-disc pl-6 space-y-2 text-lg text-gray-600">
+          <li><strong>Multi-Policy Discount:</strong> Save more when you bundle your auto insurance with other GEICO products.</li>
+          <li><strong>Safe Driving Discounts:</strong> Rewards for maintaining a clean driving record.</li>
+          <li><strong>SR-22 Filings:</strong> Fast and efficient SR-22 filings for drivers who need to prove financial responsibility to the state.</li>
+          <li><strong>Flexible Payment Options:</strong> A variety of payment plans designed to fit your budget.</li>
+          <li><strong>24/7 Claims Service:</strong> GEICO is committed to handling claims quickly and fairly, ensuring you get back on the road or back to your life as soon as possible.</li>
+        </ul>
+        <p className="text-lg text-gray-600 leading-relaxed mt-6">
+          At Rainbow Insurance Agency, we'll help you understand these features and ensure you have the right level of protection for your needs. We're dedicated to providing the best service and the best rates in the business, and GEICO's reliable products are a big part of that. We've seen firsthand how they support their policyholders during difficult times, and we're proud to represent a company with such a strong track record of reliability.
+        </p>
+      </section>
 
-GEICO is known for its commitment to providing "Insurance for the Way You Live," focusing on comprehensive coverage and competitive pricing. They understand that everyone's situation is unique, and they work to provide coverage that fits your life and budget. This shared commitment to personal service and flexibility makes GEICO a natural fit for our clients.
+      <section className="bg-slate-900 text-white rounded-3xl p-8 shadow-xl">
+        <h3 className="text-2xl font-black mb-6 text-rainbow-gold">Serving the Entire DFW Metroplex with GEICO Insurance</h3>
+        <p className="text-lg text-white/80 leading-relaxed mb-6">
+          Whether you're driving in the heart of Fort Worth, commuting to Dallas, or living in one of the many vibrant communities in Arlington or Garland, GEICO Insurance and Rainbow Insurance Agency have you covered. We serve the entire DFW metroplex, providing expert advice and the best insurance rates to thousands of satisfied clients. Our office on 8th Ave is a hub of activity where we help our neighbors secure their futures every single day. We're proud to be a part of the local economy and to support the growth of our community.
+        </p>
+        <p className="text-lg text-white/80 leading-relaxed">
+          Our team is particularly skilled at helping clients who need high-quality protection for their vehicles. GEICO's competitive pricing and flexible underwriting often make them the best choice for those looking for reliable protection at a price they can afford. We believe that everyone deserves the best protection at a price they can afford, and we work tirelessly to find the right policy for every client.
+        </p>
+        <p className="text-lg text-white/80 leading-relaxed mt-6">
+          Believe in us for your GEICO insurance needs. Susan and her expert team have the experience, the carriers, and the dedication to ensure you're always getting the best value. Experience the Rainbow difference today and see why we're the top choice for insurance in Fort Worth and beyond.
+        </p>
+      </section>
 
-Furthermore, GEICO offers a variety of specialized discounts that we can help you unlock. From multi-policy savings to discounts for safe driving and vehicle safety features, we'll make sure you're taking full advantage of every opportunity to lower your premium. We've been serving the North Texas community since 1993, and our reputation for integrity and honesty is built on finding the best solutions for our clients.`
-    },
-    {
-      title: "GEICO Auto & Specialty Insurance Features",
-      content: `GEICO specializes in providing comprehensive insurance coverage for vehicles. Some of the key features of their policies include:
+      <section>
+        <h3 className="text-2xl font-black text-gray-900 mb-6">Expert Guidance for Your Insurance Needs</h3>
+        <p className="text-lg text-gray-600 leading-relaxed mb-6">
+          Choosing GEICO Insurance through Rainbow Insurance Agency means you're getting more than just a policy; you're getting a partner in your protection. We've been a part of the Fort Worth community since 1993, and we understand the local market better than anyone. We know the specific risks of driving and owning property in North Texas, from the potential for hail damage to the challenges of navigating construction zones. This local knowledge allows us to provide more accurate advice and to tailor your GEICO policy to your specific needs.
+        </p>
+        <p className="text-lg text-gray-600 leading-relaxed mb-6">
+          Our independence is your greatest asset. While we are proud to represent GEICO, we also shop 56+ other A+ rated carriers. This means we can compare GEICO's rates and coverage with the entire market to ensure you're getting the absolute best deal. If GEICO is the best fit for you today, but your needs change tomorrow, we have the flexibility to move you to another carrier without any interruption in your protection. We work for YOU, not the insurance company.
+        </p>
+        <p className="text-lg text-gray-600 leading-relaxed">
+          In Fort Worth, we know that community matters. That's why we're involved in local events and support local charities. When you choose Rainbow Insurance, you're supporting a local business that gives back to the city we all love. We treat every client like family, providing the kind of personal service that is becoming increasingly rare in today's digital world. Call us today at 817-922-8031 and experience the difference that local expertise and a client-centric approach can make for your insurance needs.
+        </p>
+      </section>
 
-• Multi-Policy Discount: Save more when you bundle your auto insurance with other GEICO products.
-• Safe Driving Discounts: Rewards for maintaining a clean driving record.
-• SR-22 Filings: Fast and efficient SR-22 filings for drivers who need to prove financial responsibility to the state.
-• Flexible Payment Options: A variety of payment plans designed to fit your budget.
-• 24/7 Claims Service: GEICO is committed to handling claims quickly and fairly, ensuring you get back on the road or back to your life as soon as possible.
-
-At Rainbow Insurance Agency, we'll help you understand these features and ensure you have the right level of protection for your needs. We're dedicated to providing the best service and the best rates in the business, and GEICO's reliable products are a big part of that.`
-    },
-    {
-      title: "Serving the Entire DFW Metroplex with GEICO Insurance",
-      content: `Whether you're driving in the heart of Fort Worth, commuting to Dallas, or living in one of the many vibrant communities in Arlington or Garland, GEICO Insurance and Rainbow Insurance Agency have you covered. We serve the entire DFW metroplex, providing expert advice and the best insurance rates to thousands of satisfied clients.
-
-Our team is particularly skilled at helping clients who need high-quality protection for their vehicles. GEICO's competitive pricing and flexible underwriting often make them the best choice for those looking for reliable protection at a price they can afford. We believe that everyone deserves the best protection at a price they can afford.
-
-Believe in us for your GEICO insurance needs. Susan and her expert team have the experience, the carriers, and the dedication to ensure you're always getting the best value. Experience the Rainbow difference today and see why we're the top choice for insurance in Fort Worth and beyond.`
-    }
-  ];
+      <section className="bg-rainbow-pink/5 rounded-3xl p-8 border border-rainbow-pink/10">
+        <h3 className="text-2xl font-black text-gray-900 mb-6">Get Your GEICO Quote Today: Start Saving in Fort Worth</h3>
+        <p className="text-lg text-gray-600 leading-relaxed mb-6">
+          Don't wait until you're in an accident or have a loss to find out if you have the right protection at the right price. Call Rainbow Insurance Agency today at 817-922-8031 and let Susan and her expert team find you the best GEICO Insurance rates in Fort Worth. We'll take the time to listen to your needs, answer your questions, and provide a free, no-obligation quote. Experience the Rainbow difference and see why thousands of your neighbors trust us with their insurance.
+        </p>
+        <p className="text-lg text-gray-600 leading-relaxed">
+          Believe in us to find you the absolute lowest rates and the best service in Tarrant County. We've been the trusted choice for Fort Worth since 1993 because we treat every client like family. Whether you're looking for personal or commercial protection, we have the carriers and the experience to find the perfect solution for you. Let's start building your perfect protection plan today.
+        </p>
+      </section>
+    </div>
+  `;
 
   return (
     <div className="bg-slate-50">
@@ -154,86 +199,12 @@ Believe in us for your GEICO insurance needs. Susan and her expert team have the
       {/* SEO Content Section */}
       <section className="py-24 bg-white">
         <div className="max-w-5xl mx-auto px-4">
-          <div className="space-y-12 prose prose-lg max-w-none">
-            <section>
-              <h2 className="text-3xl font-black text-gray-900 mb-6 text-center">GEICO Insurance in Fort Worth: Savings You Can Count On</h2>
-              <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                GEICO is one of the most recognizable and trusted names in insurance, known for its commitment to providing high-quality protection and exceptional savings. As an authorized GEICO agent in Fort Worth, Rainbow Insurance Agency is proud to offer our clients access to their extensive range of products, including auto, motorcycle, and RV insurance. We understand that finding the right insurance can be overwhelming, which is why Susan and her expert team are dedicated to making the process simple, transparent, and affordable.
-              </p>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                When you choose GEICO through Rainbow Insurance, you're getting the combined expertise of Susan and her expert team. We understand how to navigate GEICO's sophisticated rating system to find the absolute lowest rates for your specific needs. GEICO is particularly strong in the standard auto market, often offering the best value for clients with good driving records in the DFW metroplex. We take the time to explain the nuances of GEICO's policies, helping you understand the unique features and benefits available. We believe in transparency and personalized service, ensuring that every client feels confident in their protection. By shopping 56+ carriers, including GEICO, we ensure you're getting the most competitive options available in the market.
-              </p>
-              <p className="text-lg text-gray-600 leading-relaxed mt-6">
-                Our deep roots in Fort Worth allow us to provide a level of service that national carriers simply cannot match. We understand the local landscape, the specific risks of our region, and the values of our community. When you choose GEICO through Rainbow Insurance, you're not just getting a policy; you're getting a dedicated partner who is committed to your long-term success and security. We're here to answer your questions, advocate for your interests, and provide the expert guidance you need to navigate the complexities of the insurance market.
-              </p>
-            </section>
-
-            <section className="bg-white rounded-3xl p-8 shadow-sm border border-gray-100">
-              <h3 className="text-2xl font-black text-gray-900 mb-6">The Advantages of GEICO Insurance with Rainbow Insurance Agency</h3>
-              <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                Working with an independent agent like Rainbow Insurance Agency to secure your GEICO policy offers several key advantages. First is our local expertise. We know the Fort Worth and Dallas areas, and we understand the unique risks and requirements of Texas drivers. We can provide personalized advice that you won't get from a generic call center.
-              </p>
-              <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                GEICO is known for its commitment to providing "Insurance for the Way You Live," focusing on comprehensive coverage and competitive pricing. They understand that everyone's situation is unique, and they work to provide coverage that fits your life and budget. This shared commitment to personal service and flexibility makes GEICO a natural fit for our clients.
-              </p>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                Furthermore, GEICO offers a variety of specialized discounts that we can help you unlock. From multi-policy savings to discounts for safe driving and vehicle safety features, we'll make sure you're taking full advantage of every opportunity to lower your premium. We've been serving the North Texas community since 1993, and our reputation for integrity and honesty is built on finding the best solutions for our clients.
-              </p>
-            </section>
-
-            <section>
-              <h3 className="text-2xl font-black text-gray-900 mb-6">GEICO Auto & Specialty Insurance Features</h3>
-              <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                GEICO specializes in providing comprehensive insurance coverage for vehicles. Some of the key features of their policies include:
-              </p>
-              <ul className="list-disc pl-6 space-y-2 text-lg text-gray-600">
-                <li><strong>Multi-Policy Discount:</strong> Save more when you bundle your auto insurance with other GEICO products.</li>
-                <li><strong>Safe Driving Discounts:</strong> Rewards for maintaining a clean driving record.</li>
-                <li><strong>SR-22 Filings:</strong> Fast and efficient SR-22 filings for drivers who need to prove financial responsibility to the state.</li>
-                <li><strong>Flexible Payment Options:</strong> A variety of payment plans designed to fit your budget.</li>
-                <li><strong>24/7 Claims Service:</strong> GEICO is committed to handling claims quickly and fairly, ensuring you get back on the road or back to your life as soon as possible.</li>
-              </ul>
-              <p className="text-lg text-gray-600 leading-relaxed mt-6">
-                At Rainbow Insurance Agency, we'll help you understand these features and ensure you have the right level of protection for your needs. We're dedicated to providing the best service and the best rates in the business, and GEICO's reliable products are a big part of that. We've seen firsthand how they support their policyholders during difficult times, and we're proud to represent a company with such a strong track record of reliability.
-              </p>
-            </section>
-
-            <section className="bg-slate-900 text-white rounded-3xl p-8 shadow-xl">
-              <h3 className="text-2xl font-black mb-6 text-rainbow-gold">Serving the Entire DFW Metroplex with GEICO Insurance</h3>
-              <p className="text-lg text-white/80 leading-relaxed mb-6">
-                Whether you're driving in the heart of Fort Worth, commuting to Dallas, or living in one of the many vibrant communities in Arlington or Garland, GEICO Insurance and Rainbow Insurance Agency have you covered. We serve the entire DFW metroplex, providing expert advice and the best insurance rates to thousands of satisfied clients. Our office on 8th Ave is a hub of activity where we help our neighbors secure their futures every single day. We're proud to be a part of the local economy and to support the growth of our community.
-              </p>
-              <p className="text-lg text-white/80 leading-relaxed">
-                Our team is particularly skilled at helping clients who need high-quality protection for their vehicles. GEICO's competitive pricing and flexible underwriting often make them the best choice for those looking for reliable protection at a price they can afford. We believe that everyone deserves the best protection at a price they can afford, and we work tirelessly to find the right policy for every client.
-              </p>
-              <p className="text-lg text-white/80 leading-relaxed mt-6">
-                Believe in us for your GEICO insurance needs. Susan and her expert team have the experience, the carriers, and the dedication to ensure you're always getting the best value. Experience the Rainbow difference today and see why we're the top choice for insurance in Fort Worth and beyond.
-              </p>
-            </section>
-
-            <section>
-              <h3 className="text-2xl font-black text-gray-900 mb-6">Expert Guidance for Your Insurance Needs</h3>
-              <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                Choosing GEICO Insurance through Rainbow Insurance Agency means you're getting more than just a policy; you're getting a partner in your protection. We've been a part of the Fort Worth community since 1993, and we understand the local market better than anyone. We know the specific risks of driving and owning property in North Texas, from the potential for hail damage to the challenges of navigating construction zones. This local knowledge allows us to provide more accurate advice and to tailor your GEICO policy to your specific needs.
-              </p>
-              <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                Our independence is your greatest asset. While we are proud to represent GEICO, we also shop 56+ other A+ rated carriers. This means we can compare GEICO's rates and coverage with the entire market to ensure you're getting the absolute best deal. If GEICO is the best fit for you today, but your needs change tomorrow, we have the flexibility to move you to another carrier without any interruption in your protection. We work for YOU, not the insurance company.
-              </p>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                In Fort Worth, we know that community matters. That's why we're involved in local events and support local charities. When you choose Rainbow Insurance, you're supporting a local business that gives back to the city we all love. We treat every client like family, providing the kind of personal service that is becoming increasingly rare in today's digital world. Call us today at 817-922-8031 and experience the difference that local expertise and a client-centric approach can make for your insurance needs.
-              </p>
-            </section>
-
-            <section className="bg-rainbow-pink/5 rounded-3xl p-8 border border-rainbow-pink/10">
-              <h3 className="text-2xl font-black text-gray-900 mb-6">Get Your GEICO Quote Today: Start Saving in Fort Worth</h3>
-              <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                Don't wait until you're in an accident or have a loss to find out if you have the right protection at the right price. Call Rainbow Insurance Agency today at 817-922-8031 and let Susan and her expert team find you the best GEICO Insurance rates in Fort Worth. We'll take the time to listen to your needs, answer your questions, and provide a free, no-obligation quote. Experience the Rainbow difference and see why thousands of your neighbors trust us with their insurance.
-              </p>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                Believe in us to find you the absolute lowest rates and the best service in Tarrant County. We've been the trusted choice for Fort Worth since 1993 because we treat every client like family. Whether you're looking for personal or commercial protection, we have the carriers and the experience to find the perfect solution for you. Let's start building your perfect protection plan today.
-              </p>
-            </section>
-          </div>
+          <ExpandableText 
+            className="prose prose-lg max-w-none"
+            buttonClassName="text-rainbow-pink"
+          >
+            {seoContent}
+          </ExpandableText>
         </div>
       </section>
 

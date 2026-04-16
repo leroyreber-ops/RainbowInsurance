@@ -17,25 +17,30 @@ async function startServer() {
     try {
       const { name, email, phone, insuranceType, message, pageSource, subject } = req.body;
       const contactEmail = process.env.CONTACT_EMAIL || "rainbowins@hotmail.com";
+      const web3FormsKey = process.env.WEB3FORMS_ACCESS_KEY || "1befa18a-33ad-4ccb-a7e3-802a7825768a";
 
-      // Using FormSubmit.co as a simple backend email service
-      // This keeps the email address hidden from the client-side code
-      const response = await fetch(`https://formsubmit.co/ajax/${contactEmail}`, {
+      // Using Web3Forms for reliable email delivery
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           "Accept": "application/json"
         },
         body: JSON.stringify({
+          access_key: web3FormsKey,
           name,
           email,
           phone,
           insuranceType,
-          subject: subject || `New Quote Request: ${insuranceType || 'General'}`,
-          message,
+          subject: subject || `New Quote Request from Rainbow Insurance Website`,
+          message: message || `User ${name} requested a quote for ${insuranceType || 'General Insurance'}.
+
+Source: ${pageSource || 'Main Website'}
+Phone: ${phone}
+Email: ${email}`,
           pageSource,
-          _subject: `New Website Submission from ${name}`,
-          _template: "table"
+          from_name: "Rainbow Insurance Agency Webform",
+          to: contactEmail
         })
       });
 

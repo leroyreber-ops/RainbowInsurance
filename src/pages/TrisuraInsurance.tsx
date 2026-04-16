@@ -1,7 +1,7 @@
 import { Phone, ArrowRight, Shield, Award, Star, Clock, Users, CheckCircle2, Zap, ShieldCheck, Info, ExternalLink, MapPin, History, Car, Home as HomeIcon, Briefcase, Heart, Anchor, FileText } from 'lucide-react';
 import { motion } from 'motion/react';
 import SEO from '../components/SEO';
-import ReadMore from '../components/ReadMore';
+import ExpandableText from '../components/ExpandableText';
 
 interface PageProps {
   navigateTo: (page: string) => void;
@@ -25,6 +25,39 @@ export default function TrisuraInsurance({ navigateTo, openQuoteForm }: PageProp
       "addressCountry": "US"
     }
   };
+
+  const seoContent = `
+    <h2>Expert Trisura Insurance Solutions in Fort Worth</h2>
+    <p>Trisura Specialty Insurance Company is a leading provider of innovative specialty insurance products, known for its expertise in niche markets and its commitment to providing robust protection for complex risks. In the dynamic economic landscape of Fort Worth, where businesses and individuals face a wide range of unique challenges, having an insurance partner that is both stable and highly specialized is a significant advantage. Trisura offers a range of specialty property and casualty products designed to provide the security you need to thrive.</p>
+
+    <p>Whether you're looking for comprehensive homeowners insurance for your Fort Worth residence or need specialized protection for your business, Trisura's tailored approach ensures you have the coverage you need at a competitive price. At Rainbow Insurance Agency, Susan and her team have extensive experience working with Trisura, ensuring that our clients in Tarrant County get the best possible rates and service. We believe in providing the best service and the best rates, and Trisura is a key partner in making that a reality for our community.</p>
+
+    <h2>Why Choose Trisura Insurance?</h2>
+    <p>Trisura is known for its discipline and its commitment to solving difficult insurance problems. Their expertise in specialty lines allows them to create comprehensive protection strategies that meet or exceed industry standards for high-risk or unique properties. They are recognized for their exceptional service and their dedication to building strong partnerships with their authorized agents and policyholders. As an authorized agent, Rainbow Insurance Agency is proud to provide our clients with access to these world-class specialty products.</p>
+
+    <h2>Comprehensive Protection for Fort Worth Residents & Businesses</h2>
+    <p>Protecting your assets in North Texas requires coverage that is built for today's environment. Trisura Specialty Insurance offers products that provide a robust shield against the unexpected.</p>
+
+    <ul>
+      <li><strong>Specialty Property:</strong> Customized protection for unique residential risks that standard policies might not cover.</li>
+      <li><strong>Commercial Lines:</strong> Tailored protection for businesses against common risks and liability concerns.</li>
+      <li><strong>Professional Liability:</strong> Critical financial protection against legal claims for professionals in various fields.</li>
+      <li><strong>Surety Solutions:</strong> Specialized bonding and guarantee products for businesses and contractors.</li>
+    </ul>
+
+    <h2>The Rainbow Insurance Agency Advantage</h2>
+    <p>While Trisura provides the coverage, Rainbow Insurance Agency provides the local expertise and advocacy. We've been serving Fort Worth for over 30 years, and we know how to get our clients the best results. Our independence is your greatest asset.</p>
+
+    <ul>
+      <li><strong>Market Comparison:</strong> We shop Trisura against 56+ other carriers to ensure your policy is also a great value.</li>
+      <li><strong>Local Knowledge:</strong> We understand the specific risks and regulatory environment of Fort Worth and Texas.</li>
+      <li><strong>Personalized Service:</strong> Susan and her team take the time to understand your needs and find the best fit for your budget.</li>
+      <li><strong>Claims Support:</strong> If you ever have a loss, we're here to help you navigate the process and get the fair settlement you deserve.</li>
+    </ul>
+
+    <h2>Navigating Complex Risks in Texas</h2>
+    <p>The insurance market in Texas is constantly evolving, and Trisura is at the forefront of providing solutions for complex risks. By combining financial stability with a specialized, innovative approach, they are able to provide coverage that is both reliable and competitively priced. Our agents at Rainbow Insurance Agency are experts in the local market and can help you identify every possible discount and savings opportunity. We believe in providing the best service and the best rates, and our relationship with Trisura is a key part of that commitment. Discover the Rainbow difference and see how we can protect what matters most to you.</p>
+  `;
 
   return (
     <div className="bg-slate-50">
@@ -113,114 +146,25 @@ export default function TrisuraInsurance({ navigateTo, openQuoteForm }: PageProp
         </div>
       </div>
 
-      {/* Massive SEO Content Section */}
+      {/* Massive SEO Content Section Area */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-7xl font-black text-rainbow-ink mb-6 leading-tight">
-              Trisura Insurance <br />
+              Trisura Specialty <br />
               <span className="text-rainbow-red">Fort Worth</span> Experts
             </h2>
             <p className="text-2xl text-rainbow-gray font-medium max-w-3xl mx-auto">
-              Robust commercial and specialty insurance solutions. Discover how Trisura and Rainbow Insurance Agency protect your business and assets.
+              Innovative protection for unique risks. Discover how Trisura and Rainbow Insurance Agency keep you protected.
             </p>
           </div>
 
-          <ReadMore>
-            <div className="space-y-12">
-              <section>
-                <h3 className="text-3xl font-bold mb-6 text-gray-900">Expert Trisura Insurance Solutions in Fort Worth</h3>
-                <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                  Trisura Insurance Company is a premier provider of commercial and specialty insurance products. Known for its exceptional financial strength and commitment to reliable protection, Trisura offers a range of solutions designed to safeguard businesses and individuals against complex risks. In the thriving business environment of Fort Worth, having a partner with the stability and expertise of Trisura is a significant advantage.
-                </p>
-                <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                  Whether you're managing a growing enterprise, a specialized commercial property, or require robust workers' compensation coverage, Trisura's comprehensive products provide the security you need to focus on your goals. At Rainbow Insurance Agency, Susan and her team specialize in helping Fort Worth business owners and individuals navigate Trisura's offerings, ensuring your coverage is perfectly aligned with your risk profile. We believe in providing the best service and the best rates, and Trisura's top-tier products are a key part of that commitment.
-                </p>
-              </section>
-
-              <section>
-                <h3 className="text-3xl font-bold mb-6 text-gray-900">Why Choose Trisura Insurance?</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <div className="p-8 bg-gray-50 rounded-3xl border border-gray-100">
-                    <h4 className="text-2xl font-bold mb-4 text-rainbow-pink">Financial Strength</h4>
-                    <p className="text-gray-600">Trisura boasts some of the highest financial ratings in the industry, providing the ultimate assurance that they will be there to honor claims when it matters most.</p>
-                  </div>
-                  <div className="p-8 bg-gray-50 rounded-3xl border border-gray-100">
-                    <h4 className="text-2xl font-bold mb-4 text-rainbow-pink">Specialized Expertise</h4>
-                    <p className="text-gray-600">Trisura excels in commercial lines and specialty insurance, offering deep knowledge and tailored products for industries ranging from construction to healthcare and beyond.</p>
-                  </div>
-                </div>
-              </section>
-
-              <section>
-                <h3 className="text-3xl font-bold mb-6 text-gray-900">Comprehensive Protection for Fort Worth Businesses</h3>
-                <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                  Fort Worth's economy is built on a diverse range of businesses, and Trisura Insurance offers the products necessary to protect them all.
-                </p>
-                <ul className="list-disc pl-6 space-y-4 text-lg text-gray-600 leading-relaxed">
-                  <li><strong>Commercial Property:</strong> Safeguarding your physical assets, from buildings to equipment and inventory.</li>
-                  <li><strong>General Liability:</strong> Robust protection against claims of bodily injury or property damage for which your business is responsible.</li>
-                  <li><strong>Specialty Lines:</strong> Tailored coverage for unique risks and niche industries.</li>
-                  <li><strong>Surety Bonds:</strong> Reliable bonding solutions for contractors and businesses.</li>
-                </ul>
-              </section>
-
-              <section>
-                <h3 className="text-3xl font-bold mb-6 text-gray-900">The Rainbow Insurance Agency Advantage</h3>
-                <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                  Choosing the right commercial insurance requires a local partner who understands your business and the local market. Rainbow Insurance Agency has been a trusted advisor in Fort Worth for over 30 years.
-                </p>
-                <ul className="list-disc pl-6 space-y-4 text-lg text-gray-600 leading-relaxed">
-                  <li><strong>Market Comparison:</strong> We shop Trisura against 56+ other carriers to ensure your commercial coverage is also a great value.</li>
-                  <li><strong>Local Expertise:</strong> We understand the specific regulatory and economic environment of Fort Worth and Texas.</li>
-                  <li><strong>Dedicated Support:</strong> Susan and her team are here to provide ongoing guidance and support as your business grows and evolves.</li>
-                  <li><strong>Claims Advocacy:</strong> In the event of a loss, we're your local advocate, ensuring a fair and timely resolution so you can get back to business.</li>
-                </ul>
-              </section>
-
-              <section>
-                <h3 className="text-3xl font-bold mb-6 text-gray-900">Protecting Your Business's Future</h3>
-                <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                  Commercial insurance isn't just a requirement; it's a strategic investment in your business's future. Trisura Insurance provides the high-level protection and financial security necessary to mitigate risk and ensure long-term stability. Our agents at Rainbow Insurance Agency can perform a comprehensive business risk assessment to identify where you might be vulnerable and how a Trisura policy can provide the necessary shield. We believe in building lasting relationships based on trust and results.
-                </p>
-              </section>
-
-              <section>
-                <h3 className="text-3xl font-bold mb-6 text-gray-900">Key Trisura Insurance Features</h3>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  {[
-                    { title: "Superior Ratings", desc: "Highest financial strength ratings for ultimate peace of mind." },
-                    { title: "Expert Underwriting", desc: "Specialized knowledge for complex commercial risks." },
-                    { title: "Efficient Claims", desc: "Fast and fair claims handling to minimize business disruption." },
-                    { title: "Risk Control", desc: "Resources and tools to help you prevent losses and improve safety." },
-                    { title: "Flexible Solutions", desc: "Coverage that can be tailored to your specific industry and needs." },
-                    { title: "Global Reach", desc: "The backing of a world-class insurance group with local expertise." }
-                  ].map((feature, i) => (
-                    <div key={i} className="p-6 bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-                      <h4 className="font-bold text-xl mb-2 text-gray-900">{feature.title}</h4>
-                      <p className="text-gray-600 text-sm">{feature.desc}</p>
-                    </div>
-                  ))}
-                </div>
-              </section>
-
-              <section>
-                <h3 className="text-3xl font-bold mb-6 text-gray-900">Frequently Asked Questions</h3>
-                <div className="space-y-6">
-                  {[
-                    { q: "Is Trisura Insurance a good choice for small businesses?", a: "Yes, Trisura offers robust and competitively priced solutions for businesses of all sizes, backed by exceptional financial strength." },
-                    { q: "What industries does Trisura specialize in?", a: "Trisura has deep expertise in a wide range of industries, including construction, manufacturing, healthcare, and professional services." },
-                    { q: "How do I get a Trisura quote for my business?", a: "As an authorized agent, Rainbow Insurance Agency can provide you with a comprehensive Trisura quote tailored to your business's needs." }
-                  ].map((faq, i) => (
-                    <div key={i} className="border-b border-gray-200 pb-6">
-                      <h4 className="text-xl font-bold mb-2 text-gray-900">{faq.q}</h4>
-                      <p className="text-gray-600">{faq.a}</p>
-                    </div>
-                  ))}
-                </div>
-              </section>
-            </div>
-          </ReadMore>
+          <ExpandableText 
+            className="prose prose-lg max-w-none"
+            buttonClassName="text-rainbow-pink"
+          >
+            {seoContent}
+          </ExpandableText>
         </div>
       </section>
 

@@ -1,7 +1,7 @@
 import { Phone, ArrowRight, Shield, Award, Star, Clock, Users, CheckCircle2, Zap, ShieldCheck, Info, ExternalLink, MapPin, History, Car, Home as HomeIcon, Briefcase, Heart, Anchor, FileText } from 'lucide-react';
 import { motion } from 'motion/react';
 import SEO from '../components/SEO';
-import ReadMore from '../components/ReadMore';
+import ExpandableText from '../components/ExpandableText';
 
 interface PageProps {
   navigateTo: (page: string) => void;
@@ -25,6 +25,39 @@ export default function SouthernVanguardInsurance({ navigateTo, openQuoteForm }:
       "addressCountry": "US"
     }
   };
+
+  const seoContent = `
+    <h2>Expert Southern Vanguard Insurance Solutions in Fort Worth</h2>
+    <p>Southern Vanguard Insurance Company is a Texas-based provider that specializes in residential property insurance. With a deep understanding of the unique challenges faced by Texas homeowners, Southern Vanguard offers robust and reliable coverage options that are perfectly suited for the Fort Worth market. As an authorized agent, Rainbow Insurance Agency is proud to represent Southern Vanguard, providing our clients with access to their top-tier products and exceptional service.</p>
+
+    <p>Whether you're looking for comprehensive homeowners insurance, specialized dwelling fire coverage, or protection for your personal property, Southern Vanguard's Texas-focused approach ensures you get the coverage you need at a price that fits your budget. At Rainbow Insurance Agency, Susan and her team have extensive experience working with Southern Vanguard, ensuring that our clients in Tarrant County get the best possible rates and service. We believe that every home deserves reliable protection, and Southern Vanguard is a key partner in making that a reality for our community.</p>
+
+    <h2>Why Choose Southern Vanguard Insurance?</h2>
+    <p>As a Texas-based carrier, Southern Vanguard understands the specific risks and environmental factors that impact homeowners in the Lone Star State. Their products are specifically designed for the Texas market. Southern Vanguard is known for its commitment to providing reliable and comprehensive property insurance, ensuring that your home and belongings are well-shielded against a wide range of perils.</p>
+
+    <h2>Comprehensive Home Protection for Fort Worth Residents</h2>
+    <p>Fort Worth's residential landscape is diverse, and Southern Vanguard Insurance offers products that can be customized to fit everything from historic bungalows to new suburban builds.</p>
+
+    <ul>
+      <li><strong>Homeowners Insurance:</strong> Comprehensive protection for your primary residence, personal property, and liability.</li>
+      <li><strong>Dwelling Fire:</strong> Specialized coverage for rental properties, seasonal homes, or properties that don't qualify for standard homeowners insurance.</li>
+      <li><strong>Personal Property:</strong> Coverage for your belongings, ensuring you can replace what matters most in the event of a loss.</li>
+      <li><strong>Liability Coverage:</strong> Financial protection against claims of injury or property damage for which you are responsible.</li>
+    </ul>
+
+    <h2>The Rainbow Insurance Agency Advantage</h2>
+    <p>While Southern Vanguard provides the coverage, Rainbow Insurance Agency provides the local expertise and advocacy. We've been serving Fort Worth for over 30 years, and we know how to get our clients the best results.</p>
+
+    <ul>
+      <li><strong>Market Comparison:</strong> We shop Southern Vanguard against 56+ other carriers to ensure your home policy is also a great value.</li>
+      <li><strong>Local Knowledge:</strong> We understand the specific risks and weather patterns of Tarrant County.</li>
+      <li><strong>Personalized Service:</strong> Susan and her team take the time to understand your home and find the best fit for your budget.</li>
+      <li><strong>Claims Support:</strong> If you ever need to file a claim, we're your local advocate, ensuring a smooth and fair process.</li>
+    </ul>
+
+    <h2>Navigating Texas Home Insurance</h2>
+    <p>Home insurance in Texas can be complex, with various endorsements and coverage options to consider. By working with a specialized carrier like Southern Vanguard, you can find coverage that fits your unique situation. Our agents at Rainbow Insurance Agency are experts in the Texas property market and can help you identify every possible discount and savings opportunity. We believe in providing the best service and the best rates, regardless of your home's age or location.</p>
+  `;
 
   return (
     <div className="bg-slate-50">
@@ -113,7 +146,7 @@ export default function SouthernVanguardInsurance({ navigateTo, openQuoteForm }:
         </div>
       </div>
 
-      {/* Massive SEO Content Section */}
+      {/* Massive SEO Content Section Area */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
@@ -126,101 +159,12 @@ export default function SouthernVanguardInsurance({ navigateTo, openQuoteForm }:
             </p>
           </div>
 
-          <ReadMore>
-            <div className="space-y-12">
-              <section>
-                <h3 className="text-3xl font-bold mb-6 text-gray-900">Expert Southern Vanguard Insurance Solutions in Fort Worth</h3>
-                <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                  Southern Vanguard Insurance Company is a Texas-based provider that specializes in residential property insurance. With a deep understanding of the unique challenges faced by Texas homeowners, Southern Vanguard offers robust and reliable coverage options that are perfectly suited for the Fort Worth market. As an authorized agent, Rainbow Insurance Agency is proud to represent Southern Vanguard, providing our clients with access to their top-tier products and exceptional service.
-                </p>
-                <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                  Whether you're looking for comprehensive homeowners insurance, specialized dwelling fire coverage, or protection for your personal property, Southern Vanguard's Texas-focused approach ensures you get the coverage you need at a price that fits your budget. At Rainbow Insurance Agency, Susan and her team have extensive experience working with Southern Vanguard, ensuring that our clients in Tarrant County get the best possible rates and service. We believe that every home deserves reliable protection, and Southern Vanguard is a key partner in making that a reality for our community.
-                </p>
-              </section>
-
-              <section>
-                <h3 className="text-3xl font-bold mb-6 text-gray-900">Why Choose Southern Vanguard Insurance?</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <div className="p-8 bg-gray-50 rounded-3xl border border-gray-100">
-                    <h4 className="text-2xl font-bold mb-4 text-rainbow-pink">Texas Expertise</h4>
-                    <p className="text-gray-600">As a Texas-based carrier, Southern Vanguard understands the specific risks and environmental factors that impact homeowners in the Lone Star State. Their products are specifically designed for the Texas market.</p>
-                  </div>
-                  <div className="p-8 bg-gray-50 rounded-3xl border border-gray-100">
-                    <h4 className="text-2xl font-bold mb-4 text-rainbow-pink">Reliable Protection</h4>
-                    <p className="text-gray-600">Southern Vanguard is known for its commitment to providing reliable and comprehensive property insurance, ensuring that your home and belongings are well-shielded against a wide range of perils.</p>
-                  </div>
-                </div>
-              </section>
-
-              <section>
-                <h3 className="text-3xl font-bold mb-6 text-gray-900">Comprehensive Home Protection for Fort Worth Residents</h3>
-                <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                  Fort Worth's residential landscape is diverse, and Southern Vanguard Insurance offers products that can be customized to fit everything from historic bungalows to new suburban builds.
-                </p>
-                <ul className="list-disc pl-6 space-y-4 text-lg text-gray-600 leading-relaxed">
-                  <li><strong>Homeowners Insurance:</strong> Comprehensive protection for your primary residence, personal property, and liability.</li>
-                  <li><strong>Dwelling Fire:</strong> Specialized coverage for rental properties, seasonal homes, or properties that don't qualify for standard homeowners insurance.</li>
-                  <li><strong>Personal Property:</strong> Coverage for your belongings, ensuring you can replace what matters most in the event of a loss.</li>
-                  <li><strong>Liability Coverage:</strong> Financial protection against claims of injury or property damage for which you are responsible.</li>
-                </ul>
-              </section>
-
-              <section>
-                <h3 className="text-3xl font-bold mb-6 text-gray-900">The Rainbow Insurance Agency Advantage</h3>
-                <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                  While Southern Vanguard provides the coverage, Rainbow Insurance Agency provides the local expertise and advocacy. We've been serving Fort Worth for over 30 years, and we know how to get our clients the best results.
-                </p>
-                <ul className="list-disc pl-6 space-y-4 text-lg text-gray-600 leading-relaxed">
-                  <li><strong>Market Comparison:</strong> We shop Southern Vanguard against 56+ other carriers to ensure your home policy is also a great value.</li>
-                  <li><strong>Local Knowledge:</strong> We understand the specific risks and weather patterns of Tarrant County.</li>
-                  <li><strong>Personalized Service:</strong> Susan and her team take the time to understand your home and find the best fit for your budget.</li>
-                  <li><strong>Claims Support:</strong> If you ever need to file a claim, we're your local advocate, ensuring a smooth and fair process.</li>
-                </ul>
-              </section>
-
-              <section>
-                <h3 className="text-3xl font-bold mb-6 text-gray-900">Navigating Texas Home Insurance</h3>
-                <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                  Home insurance in Texas can be complex, with various endorsements and coverage options to consider. By working with a specialized carrier like Southern Vanguard, you can find coverage that fits your unique situation. Our agents at Rainbow Insurance Agency are experts in the Texas property market and can help you identify every possible discount and savings opportunity. We believe in providing the best service and the best rates, regardless of your home's age or location.
-                </p>
-              </section>
-
-              <section>
-                <h3 className="text-3xl font-bold mb-6 text-gray-900">Key Southern Vanguard Insurance Features</h3>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  {[
-                    { title: "Texas-Focused", desc: "Expertise in the unique risks of the Texas property market." },
-                    { title: "Flexible Coverage", desc: "Options to tailor your policy to your specific needs." },
-                    { title: "Competitive Rates", desc: "Affordable protection for a wide range of homes." },
-                    { title: "Reliable Claims", desc: "Efficient claims handling to get you back on your feet fast." },
-                    { title: "Local Support", desc: "Professional guidance from Texas-based insurance experts." },
-                    { title: "Comprehensive Shield", desc: "Protection that meets or exceeds industry standards." }
-                  ].map((feature, i) => (
-                    <div key={i} className="p-6 bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-                      <h4 className="font-bold text-xl mb-2 text-gray-900">{feature.title}</h4>
-                      <p className="text-gray-600 text-sm">{feature.desc}</p>
-                    </div>
-                  ))}
-                </div>
-              </section>
-
-              <section>
-                <h3 className="text-3xl font-bold mb-6 text-gray-900">Frequently Asked Questions</h3>
-                <div className="space-y-6">
-                  {[
-                    { q: "Is Southern Vanguard Insurance a reliable choice for Fort Worth homeowners?", a: "Yes, Southern Vanguard is a well-regarded Texas-based provider that specializes in residential property insurance." },
-                    { q: "What types of properties does Southern Vanguard cover?", a: "Southern Vanguard offers coverage for primary residences, rental properties, seasonal homes, and more." },
-                    { q: "How do I get a Southern Vanguard quote through Rainbow Insurance Agency?", a: "As an authorized agent, we can provide you with a competitive Southern Vanguard quote in minutes." }
-                  ].map((faq, i) => (
-                    <div key={i} className="border-b border-gray-200 pb-6">
-                      <h4 className="text-xl font-bold mb-2 text-gray-900">{faq.q}</h4>
-                      <p className="text-gray-600">{faq.a}</p>
-                    </div>
-                  ))}
-                </div>
-              </section>
-            </div>
-          </ReadMore>
+          <ExpandableText 
+            className="prose prose-lg max-w-none"
+            buttonClassName="text-rainbow-pink"
+          >
+            {seoContent}
+          </ExpandableText>
         </div>
       </section>
 

@@ -72,7 +72,7 @@ export default function ContactUs({ navigateTo, openQuoteForm }: PageProps) {
       },
       "telephone": "817-922-8031",
       "email": "rainbowins@yahoo.com",
-      "openingHours": "Mo-Fr 09:00-17:00, Sa 09:00-13:00"
+      "openingHours": "Mo,We,Fr 09:00-18:00, Tu,Th 09:00-19:00, Sa 09:00-14:00"
     }
   };
 
@@ -175,8 +175,9 @@ export default function ContactUs({ navigateTo, openQuoteForm }: PageProps) {
               <h3 className="text-2xl font-bold mb-4 text-gray-900">Business Hours</h3>
               <p className="text-gray-600 mb-6">We're here to serve you throughout the week.</p>
               <div className="space-y-2 text-gray-900 font-medium">
-                <p>Mon - Fri: 9:00 AM - 5:00 PM</p>
-                <p>Saturday: 9:00 AM - 1:00 PM</p>
+                <p>Mon, Wed, Fri: 9:00 AM - 6:00 PM</p>
+                <p>Tue, Thu: 9:00 AM - 7:00 PM</p>
+                <p>Saturday: 9:00 AM - 2:00 PM</p>
                 <p>Sunday: Closed</p>
               </div>
             </motion.div>

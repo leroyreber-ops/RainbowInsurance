@@ -1,7 +1,7 @@
 import { Phone, ArrowRight, Shield, Award, Star, Clock, Users, CheckCircle2, Zap, ShieldCheck, Info, ExternalLink, MapPin, History, Car, Home as HomeIcon, Briefcase, Heart, Anchor, FileText } from 'lucide-react';
 import { motion } from 'motion/react';
 import SEO from '../components/SEO';
-import ReadMore from '../components/ReadMore';
+import ExpandableText from '../components/ExpandableText';
 
 interface PageProps {
   navigateTo: (page: string) => void;
@@ -25,6 +25,39 @@ export default function SpinnakerInsurance({ navigateTo, openQuoteForm }: PagePr
       "addressCountry": "US"
     }
   };
+
+  const seoContent = `
+    <h2>Expert Spinnaker Insurance Solutions in Fort Worth</h2>
+    <p>Spinnaker Insurance Company is a leading provider of innovative insurance solutions, known for its ability to handle modern risks and provide tailored coverage that standard carriers often overlook. In the dynamic economic landscape of Fort Worth, businesses and individuals frequently encounter unique challenges that require more than just a basic policy. As an authorized agent for Spinnaker, Rainbow Insurance Agency brings this high-level expertise to your doorstep, ensuring that your specific needs are met with precision and care.</p>
+
+    <p>Whether you're managing a specialized business, a unique property, or have specific liability concerns, Spinnaker's innovative approach to insurance provides the flexibility and depth of coverage required for modern risks. At Rainbow Insurance Agency, Susan and her team specialize in translating these complex insurance products into clear, actionable solutions for our clients in Tarrant County. We don't just provide a policy; we provide a strategic partnership designed to protect your future.</p>
+
+    <h2>Why Choose Spinnaker Insurance?</h2>
+    <p>Spinnaker excels in niche markets and specialty lines, offering coverage for risks that traditional insurers might find too complex. Their deep understanding of specific industries and risk profiles allows them to create highly effective protection strategies. In a rapidly changing world, Spinnaker's agile underwriting process means they can respond quickly to new risks and market shifts, providing timely coverage when you need it most.</p>
+
+    <h2>Tailored Coverage for Tarrant County</h2>
+    <p>The Fort Worth area is home to a diverse range of industries and property types, from historic homes to cutting-edge tech firms. Spinnaker Insurance recognizes this diversity and offers products that can be customized to the specific requirements of the local market.</p>
+
+    <ul>
+      <li><strong>Home Insurance:</strong> Comprehensive protection for your primary residence, personal property, and liability.</li>
+      <li><strong>Business Insurance:</strong> Robust protection for businesses against common risks and unexpected lawsuits.</li>
+      <li><strong>Specialty Property:</strong> Coverage for unique structures, high-value assets, and properties with specific risk factors.</li>
+      <li><strong>Professional Liability:</strong> Protection for professionals across various fields against claims of negligence or errors.</li>
+    </ul>
+
+    <h2>The Rainbow Insurance Agency Advantage</h2>
+    <p>Navigating modern insurance requires a guide who understands both the products and the local community. Rainbow Insurance Agency has been a fixture in Fort Worth for over 30 years, providing the stability and expertise our clients rely on.</p>
+
+    <ul>
+      <li><strong>Market Comparison:</strong> We shop Spinnaker against 56+ other carriers to ensure your modern coverage is also competitively priced.</li>
+      <li><strong>Local Knowledge:</strong> We understand the specific regulatory and economic environment of Fort Worth and Texas.</li>
+      <li><strong>Dedicated Support:</strong> Susan and her team are always available to answer questions and provide guidance as your needs evolve.</li>
+      <li><strong>Integrity First:</strong> Our reputation is built on honesty and finding the right solution for the client, every time.</li>
+    </ul>
+
+    <h2>Understanding Modern Insurance</h2>
+    <p>Modern insurance isn't just for large corporations. Small businesses and individuals with unique assets often find that standard policies leave significant gaps in their protection. Spinnaker fills these gaps, providing the specific language and coverage limits necessary to truly mitigate risk. Our agents at Rainbow Insurance Agency can perform a comprehensive risk assessment to identify where you might be vulnerable and how a Spinnaker policy can provide the necessary shield.</p>
+  `;
 
   return (
     <div className="bg-slate-50">
@@ -113,7 +146,7 @@ export default function SpinnakerInsurance({ navigateTo, openQuoteForm }: PagePr
         </div>
       </div>
 
-      {/* Massive SEO Content Section */}
+      {/* Massive SEO Content Section Area */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
@@ -126,101 +159,12 @@ export default function SpinnakerInsurance({ navigateTo, openQuoteForm }: PagePr
             </p>
           </div>
 
-          <ReadMore>
-            <div className="space-y-12">
-              <section>
-                <h3 className="text-3xl font-bold mb-6 text-gray-900">Expert Spinnaker Insurance Solutions in Fort Worth</h3>
-                <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                  Spinnaker Insurance Company is a leading provider of innovative insurance solutions, known for its ability to handle modern risks and provide tailored coverage that standard carriers often overlook. In the dynamic economic landscape of Fort Worth, businesses and individuals frequently encounter unique challenges that require more than just a basic policy. As an authorized agent for Spinnaker, Rainbow Insurance Agency brings this high-level expertise to your doorstep, ensuring that your specific needs are met with precision and care.
-                </p>
-                <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                  Whether you're managing a specialized business, a unique property, or have specific liability concerns, Spinnaker's innovative approach to insurance provides the flexibility and depth of coverage required for modern risks. At Rainbow Insurance Agency, Susan and her team specialize in translating these complex insurance products into clear, actionable solutions for our clients in Tarrant County. We don't just provide a policy; we provide a strategic partnership designed to protect your future.
-                </p>
-              </section>
-
-              <section>
-                <h3 className="text-3xl font-bold mb-6 text-gray-900">Why Choose Spinnaker Insurance?</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <div className="p-8 bg-gray-50 rounded-3xl border border-gray-100">
-                    <h4 className="text-2xl font-bold mb-4 text-rainbow-pink">Modern Expertise</h4>
-                    <p className="text-gray-600">Spinnaker excels in niche markets and specialty lines, offering coverage for risks that traditional insurers might find too complex. Their deep understanding of specific industries and risk profiles allows them to create highly effective protection strategies.</p>
-                  </div>
-                  <div className="p-8 bg-gray-50 rounded-3xl border border-gray-100">
-                    <h4 className="text-2xl font-bold mb-4 text-rainbow-pink">Agile Underwriting</h4>
-                    <p className="text-gray-600">In a rapidly changing world, Spinnaker's agile underwriting process means they can respond quickly to new risks and market shifts, providing timely coverage when you need it most.</p>
-                  </div>
-                </div>
-              </section>
-
-              <section>
-                <h3 className="text-3xl font-bold mb-6 text-gray-900">Tailored Coverage for Tarrant County</h3>
-                <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                  The Fort Worth area is home to a diverse range of industries and property types, from historic homes to cutting-edge tech firms. Spinnaker Insurance recognizes this diversity and offers products that can be customized to the specific requirements of the local market.
-                </p>
-                <ul className="list-disc pl-6 space-y-4 text-lg text-gray-600 leading-relaxed">
-                  <li><strong>Home Insurance:</strong> Comprehensive protection for your primary residence, personal property, and liability.</li>
-                  <li><strong>Business Insurance:</strong> Robust protection for businesses against common risks and unexpected lawsuits.</li>
-                  <li><strong>Specialty Property:</strong> Coverage for unique structures, high-value assets, and properties with specific risk factors.</li>
-                  <li><strong>Professional Liability:</strong> Protection for professionals across various fields against claims of negligence or errors.</li>
-                </ul>
-              </section>
-
-              <section>
-                <h3 className="text-3xl font-bold mb-6 text-gray-900">The Rainbow Insurance Agency Advantage</h3>
-                <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                  Navigating modern insurance requires a guide who understands both the products and the local community. Rainbow Insurance Agency has been a fixture in Fort Worth for over 30 years, providing the stability and expertise our clients rely on.
-                </p>
-                <ul className="list-disc pl-6 space-y-4 text-lg text-gray-600 leading-relaxed">
-                  <li><strong>Market Comparison:</strong> We shop Spinnaker against 56+ other carriers to ensure your modern coverage is also competitively priced.</li>
-                  <li><strong>Local Knowledge:</strong> We understand the specific regulatory and economic environment of Fort Worth and Texas.</li>
-                  <li><strong>Dedicated Support:</strong> Susan and her team are always available to answer questions and provide guidance as your needs evolve.</li>
-                  <li><strong>Integrity First:</strong> Our reputation is built on honesty and finding the right solution for the client, every time.</li>
-                </ul>
-              </section>
-
-              <section>
-                <h3 className="text-3xl font-bold mb-6 text-gray-900">Understanding Modern Insurance</h3>
-                <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                  Modern insurance isn't just for large corporations. Small businesses and individuals with unique assets often find that standard policies leave significant gaps in their protection. Spinnaker fills these gaps, providing the specific language and coverage limits necessary to truly mitigate risk. Our agents at Rainbow Insurance Agency can perform a comprehensive risk assessment to identify where you might be vulnerable and how a Spinnaker policy can provide the necessary shield.
-                </p>
-              </section>
-
-              <section>
-                <h3 className="text-3xl font-bold mb-6 text-gray-900">Key Spinnaker Insurance Features</h3>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  {[
-                    { title: "Custom Limits", desc: "Higher coverage limits for significant assets and liabilities." },
-                    { title: "Niche Focus", desc: "Expertise in specific industries like construction, tech, and more." },
-                    { title: "Risk Management", desc: "Tools and resources to help you prevent losses before they happen." },
-                    { title: "Fast Response", desc: "Quick turnaround on quotes and policy adjustments." },
-                    { title: "A-Rated Security", desc: "Backed by strong financial ratings for your peace of mind." },
-                    { title: "Expert Claims", desc: "Specialized claims handling for complex and unique losses." }
-                  ].map((feature, i) => (
-                    <div key={i} className="p-6 bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-                      <h4 className="font-bold text-xl mb-2 text-gray-900">{feature.title}</h4>
-                      <p className="text-gray-600 text-sm">{feature.desc}</p>
-                    </div>
-                  ))}
-                </div>
-              </section>
-
-              <section>
-                <h3 className="text-3xl font-bold mb-6 text-gray-900">Frequently Asked Questions</h3>
-                <div className="space-y-6">
-                  {[
-                    { q: "What makes Spinnaker different from standard carriers?", a: "Spinnaker focuses on modern and complex risks that standard carriers often decline, providing more flexible and tailored coverage options." },
-                    { q: "Is Spinnaker Insurance available for small businesses in Fort Worth?", a: "Yes, Spinnaker offers solutions for businesses of all sizes that have unique or specialized insurance needs." },
-                    { q: "How do I know if I need modern insurance?", a: "If your business or assets have unique risks not covered by a standard policy, or if you've been declined by traditional insurers, modern insurance from Spinnaker may be the right choice." }
-                  ].map((faq, i) => (
-                    <div key={i} className="border-b border-gray-200 pb-6">
-                      <h4 className="text-xl font-bold mb-2 text-gray-900">{faq.q}</h4>
-                      <p className="text-gray-600">{faq.a}</p>
-                    </div>
-                  ))}
-                </div>
-              </section>
-            </div>
-          </ReadMore>
+          <ExpandableText 
+            className="prose prose-lg max-w-none"
+            buttonClassName="text-rainbow-pink"
+          >
+            {seoContent}
+          </ExpandableText>
         </div>
       </section>
 

@@ -1,7 +1,7 @@
 import { Phone, ArrowRight, Shield, Award, Star, Clock, Users, CheckCircle2, Zap, ShieldCheck, Info, ExternalLink, MapPin, History, Car, Home as HomeIcon, Briefcase, Heart, Anchor, FileText } from 'lucide-react';
 import { motion } from 'motion/react';
 import SEO from '../components/SEO';
-import ReadMore from '../components/ReadMore';
+import ExpandableText from '../components/ExpandableText';
 
 interface PageProps {
   navigateTo: (page: string) => void;
@@ -25,6 +25,39 @@ export default function SuttonNationalInsurance({ navigateTo, openQuoteForm }: P
       "addressCountry": "US"
     }
   };
+
+  const seoContent = `
+    <h2>Expert Sutton National Insurance Solutions in Fort Worth</h2>
+    <p>Sutton National Insurance Company is a prominent provider of property and casualty insurance, known for its strategic approach to risk and its commitment to providing robust protection for a variety of needs. In the diverse economic landscape of Fort Worth, where businesses and individuals face a wide range of challenges, having an insurance partner that is both stable and forward-thinking is a significant advantage. Sutton National offers a range of residential and commercial products designed to provide the security you need to thrive.</p>
+
+    <p>Whether you're looking for comprehensive homeowners insurance for your Fort Worth residence or need specialized protection for your business, Sutton National's tailored approach ensures you have the coverage you need at a competitive price. At Rainbow Insurance Agency, Susan and her team have extensive experience working with Sutton National, ensuring that our clients in Tarrant County get the best possible rates and service. We believe in providing the best service and the best rates, and Sutton National is a key partner in making that a reality for our community.</p>
+
+    <h2>Why Choose Sutton National Insurance?</h2>
+    <p>Sutton National is part of a leading insurance group with significant financial strength and a deep commitment to excellence. Their expertise in both standard and specialty lines allows them to create comprehensive protection strategies that meet or exceed industry standards. They are known for their professional claims handling and their dedication to building long-term relationships with their policyholders. As an authorized agent, Rainbow Insurance Agency is proud to provide our clients with access to these world-class products.</p>
+
+    <h2>Comprehensive Protection for Fort Worth Residents & Businesses</h2>
+    <p>Protecting your assets in North Texas requires coverage that is built for the local area. Sutton National Insurance offers products that provide a robust shield against the unexpected.</p>
+
+    <ul>
+      <li><strong>Residential Property:</strong> Broad protection for your home, personal property, and liability.</li>
+      <li><strong>Commercial Lines:</strong> Tailored protection for businesses against common risks and liability concerns.</li>
+      <li><strong>Specialty Coverage:</strong> Solutions for unique risks that require a more specialized underwriting approach.</li>
+      <li><strong>Liability Shield:</strong> Critical protection against legal claims and medical expenses arising from covered incidents.</li>
+    </ul>
+
+    <h2>The Rainbow Insurance Agency Advantage</h2>
+    <p>While Sutton National provides the coverage, Rainbow Insurance Agency provides the local advocacy. We've been serving Fort Worth for over 30 years, and we know how to get our clients the best results. Our independence is your greatest asset.</p>
+
+    <ul>
+      <li><strong>Market Comparison:</strong> We shop Sutton National against 56+ other carriers to ensure your policy is also a great value.</li>
+      <li><strong>Local Knowledge:</strong> We understand the specific risks and requirements of the Fort Worth and DFW market.</li>
+      <li><strong>Personalized Service:</strong> Susan and her team take the time to understand your needs and find the best fit for your budget.</li>
+      <li><strong>Claims Support:</strong> If you ever have a loss, we're here to help you navigate the process and get the fair settlement you deserve.</li>
+    </ul>
+
+    <h2>Securing Your Future in Texas</h2>
+    <p>The insurance market in Texas can be complex, and choosing the right carrier is essential for long-term security. Sutton National Insurance provides the stability and financial backing necessary to face the future with confidence. Our agents at Rainbow Insurance Agency are experts in the local market and can help you identify every possible discount and savings opportunity. We believe in providing the best service and the best rates, and our relationship with Sutton National is a key part of that commitment. Experience the Rainbow difference and see how we can protect what matters most to you.</p>
+  `;
 
   return (
     <div className="bg-slate-50">
@@ -113,114 +146,25 @@ export default function SuttonNationalInsurance({ navigateTo, openQuoteForm }: P
         </div>
       </div>
 
-      {/* Massive SEO Content Section */}
+      {/* Massive SEO Content Section Area */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-7xl font-black text-rainbow-ink mb-6 leading-tight">
-              Sutton National Insurance <br />
+              Sutton National <br />
               <span className="text-rainbow-red">Fort Worth</span> Experts
             </h2>
             <p className="text-2xl text-rainbow-gray font-medium max-w-3xl mx-auto">
-              Specialized insurance for complex risks. Discover how Sutton National and Rainbow Insurance Agency provide the high-level protection you need.
+              Reliable protection for your home and business. Discover how Sutton National and Rainbow Insurance Agency keep you protected.
             </p>
           </div>
 
-          <ReadMore>
-            <div className="space-y-12">
-              <section>
-                <h3 className="text-3xl font-bold mb-6 text-gray-900">Expert Sutton National Insurance Solutions in Fort Worth</h3>
-                <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                  Sutton National Insurance Company is a leading provider of specialty insurance solutions, known for its ability to handle complex risks and provide tailored coverage that standard carriers often overlook. In the dynamic economic landscape of Fort Worth, businesses and individuals frequently encounter unique challenges that require more than just a basic policy. As an authorized agent for Sutton National, Rainbow Insurance Agency brings this high-level expertise to your doorstep, ensuring that your specific needs are met with precision and care.
-                </p>
-                <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                  Whether you're managing a specialized business, a unique property, or have specific liability concerns, Sutton National's innovative approach to insurance provides the flexibility and depth of coverage required for modern risks. At Rainbow Insurance Agency, Susan and her team specialize in translating these complex insurance products into clear, actionable solutions for our clients in Tarrant County. We don't just provide a policy; we provide a strategic partnership designed to protect your future.
-                </p>
-              </section>
-
-              <section>
-                <h3 className="text-3xl font-bold mb-6 text-gray-900">Why Choose Sutton National Insurance?</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <div className="p-8 bg-gray-50 rounded-3xl border border-gray-100">
-                    <h4 className="text-2xl font-bold mb-4 text-rainbow-pink">Specialty Expertise</h4>
-                    <p className="text-gray-600">Sutton National excels in niche markets and specialty lines, offering coverage for risks that traditional insurers might find too complex. Their deep understanding of specific industries and risk profiles allows them to create highly effective protection strategies.</p>
-                  </div>
-                  <div className="p-8 bg-gray-50 rounded-3xl border border-gray-100">
-                    <h4 className="text-2xl font-bold mb-4 text-rainbow-pink">Agile Underwriting</h4>
-                    <p className="text-gray-600">In a rapidly changing world, Sutton National's agile underwriting process means they can respond quickly to new risks and market shifts, providing timely coverage when you need it most.</p>
-                  </div>
-                </div>
-              </section>
-
-              <section>
-                <h3 className="text-3xl font-bold mb-6 text-gray-900">Tailored Coverage for Tarrant County</h3>
-                <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                  The Fort Worth area is home to a diverse range of industries and property types, from historic homes to cutting-edge tech firms. Sutton National Insurance recognizes this diversity and offers products that can be customized to the specific requirements of the local market.
-                </p>
-                <ul className="list-disc pl-6 space-y-4 text-lg text-gray-600 leading-relaxed">
-                  <li><strong>Specialty Property:</strong> Coverage for unique structures, high-value assets, and properties with specific risk factors.</li>
-                  <li><strong>Professional Liability:</strong> Protection for professionals across various fields against claims of negligence or errors.</li>
-                  <li><strong>General Liability:</strong> Robust protection for businesses against common risks and unexpected lawsuits.</li>
-                  <li><strong>Customized Solutions:</strong> The ability to build a policy from the ground up to address your exact risk profile.</li>
-                </ul>
-              </section>
-
-              <section>
-                <h3 className="text-3xl font-bold mb-6 text-gray-900">The Rainbow Insurance Agency Advantage</h3>
-                <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                  Navigating specialty insurance requires a guide who understands both the products and the local community. Rainbow Insurance Agency has been a fixture in Fort Worth for over 30 years, providing the stability and expertise our clients rely on.
-                </p>
-                <ul className="list-disc pl-6 space-y-4 text-lg text-gray-600 leading-relaxed">
-                  <li><strong>Market Comparison:</strong> We shop Sutton National against 56+ other carriers to ensure your specialty coverage is also competitively priced.</li>
-                  <li><strong>Local Knowledge:</strong> We understand the specific regulatory and economic environment of Fort Worth and Texas.</li>
-                  <li><strong>Dedicated Support:</strong> Susan and her team are always available to answer questions and provide guidance as your needs evolve.</li>
-                  <li><strong>Integrity First:</strong> Our reputation is built on honesty and finding the right solution for the client, every time.</li>
-                </ul>
-              </section>
-
-              <section>
-                <h3 className="text-3xl font-bold mb-6 text-gray-900">Understanding Specialty Insurance</h3>
-                <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                  Specialty insurance isn't just for large corporations. Small businesses and individuals with unique assets often find that standard policies leave significant gaps in their protection. Sutton National fills these gaps, providing the specific language and coverage limits necessary to truly mitigate risk. Our agents at Rainbow Insurance Agency can perform a comprehensive risk assessment to identify where you might be vulnerable and how a Sutton National policy can provide the necessary shield.
-                </p>
-              </section>
-
-              <section>
-                <h3 className="text-3xl font-bold mb-6 text-gray-900">Key Sutton National Insurance Features</h3>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  {[
-                    { title: "Custom Limits", desc: "Higher coverage limits for significant assets and liabilities." },
-                    { title: "Niche Focus", desc: "Expertise in specific industries like construction, tech, and more." },
-                    { title: "Risk Management", desc: "Tools and resources to help you prevent losses before they happen." },
-                    { title: "Fast Response", desc: "Quick turnaround on quotes and policy adjustments." },
-                    { title: "A-Rated Security", desc: "Backed by strong financial ratings for your peace of mind." },
-                    { title: "Expert Claims", desc: "Specialized claims handling for complex and unique losses." }
-                  ].map((feature, i) => (
-                    <div key={i} className="p-6 bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-                      <h4 className="font-bold text-xl mb-2 text-gray-900">{feature.title}</h4>
-                      <p className="text-gray-600 text-sm">{feature.desc}</p>
-                    </div>
-                  ))}
-                </div>
-              </section>
-
-              <section>
-                <h3 className="text-3xl font-bold mb-6 text-gray-900">Frequently Asked Questions</h3>
-                <div className="space-y-6">
-                  {[
-                    { q: "What makes Sutton National different from standard carriers?", a: "Sutton National focuses on specialty and complex risks that standard carriers often decline, providing more flexible and tailored coverage options." },
-                    { q: "Is Sutton National Insurance available for small businesses in Fort Worth?", a: "Yes, Sutton National offers solutions for businesses of all sizes that have unique or specialized insurance needs." },
-                    { q: "How do I know if I need specialty insurance?", a: "If your business or assets have unique risks not covered by a standard policy, or if you've been declined by traditional insurers, specialty insurance from Sutton National may be the right choice." }
-                  ].map((faq, i) => (
-                    <div key={i} className="border-b border-gray-200 pb-6">
-                      <h4 className="text-xl font-bold mb-2 text-gray-900">{faq.q}</h4>
-                      <p className="text-gray-600">{faq.a}</p>
-                    </div>
-                  ))}
-                </div>
-              </section>
-            </div>
-          </ReadMore>
+          <ExpandableText 
+            className="prose prose-lg max-w-none"
+            buttonClassName="text-rainbow-pink"
+          >
+            {seoContent}
+          </ExpandableText>
         </div>
       </section>
 

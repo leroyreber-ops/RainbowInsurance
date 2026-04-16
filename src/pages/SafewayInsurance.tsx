@@ -1,6 +1,7 @@
 import { Phone, ArrowRight, Shield, Award, Star, Clock, Users, CheckCircle2, Zap, ShieldCheck, Info, ExternalLink, MapPin } from 'lucide-react';
 import { motion } from 'motion/react';
 import SEO from '../components/SEO';
+import ExpandableText from '../components/ExpandableText';
 
 interface PageProps {
   navigateTo: (page: string) => void;
@@ -25,44 +26,41 @@ export default function SafewayInsurance({ navigateTo, openQuoteForm }: PageProp
     }
   };
 
-  const contentBlocks = [
-    {
-      title: "Safeway Insurance in Fort Worth: Reliable Coverage for Every Driver",
-      content: `Safeway Insurance has been providing affordable and reliable car insurance for over 60 years. As an authorized Safeway agent in Fort Worth, Rainbow Insurance Agency is proud to offer our clients access to Safeway's straightforward and competitive products. Safeway is particularly well-known for its commitment to personal service and its ability to provide coverage for a wide range of drivers.
+  const seoContent = `
+    <h2>Safeway Insurance in Fort Worth: Reliable Coverage for Every Driver</h2>
+    <p>Safeway Insurance has been providing affordable and reliable car insurance for over 60 years. As an authorized Safeway agent in Fort Worth, Rainbow Insurance Agency is proud to offer our clients access to Safeway's straightforward and competitive products. Safeway is particularly well-known for its commitment to personal service and its ability to provide coverage for a wide range of drivers.</p>
 
-When you choose Safeway through Rainbow Insurance, you're getting the combined expertise of Susan and her expert team. We understand how to navigate Safeway's rating system to find the absolute lowest rates for your specific needs. Whether you're a first-time driver, someone with a few marks on your record, or you need an SR-22, Safeway often has some of the best rates in the DFW metroplex.
+    <p>When you choose Safeway through Rainbow Insurance, you're getting the combined expertise of Susan and her expert team. We understand how to navigate Safeway's rating system to find the absolute lowest rates for your specific needs. Whether you're a first-time driver, someone with a few marks on your record, or you need an SR-22, Safeway often has some of the best rates in the DFW metroplex.</p>
 
-Our team doesn't just provide one quote. We compare Safeway's offerings with our 56+ other A+ rated carriers to ensure you're getting the absolute best value available in Tarrant County. We believe in providing the best service and the best rates, and Safeway is a key partner in helping us achieve that for our clients.`
-    },
-    {
-      title: "The Benefits of Safeway Insurance with Rainbow Insurance Agency",
-      content: `Working with an independent agent like Rainbow Insurance Agency to secure your Safeway policy offers several key advantages. First is our local expertise. We know the Fort Worth and Dallas areas, and we understand the unique risks and requirements of Texas drivers. We can provide personalized advice that you won't get from a generic call center.
+    <p>Our team doesn't just provide one quote. We compare Safeway's offerings with our 56+ other A+ rated carriers to ensure you're getting the absolute best value available in Tarrant County. We believe in providing the best service and the best rates, and Safeway is a key partner in helping us achieve that for our clients.</p>
 
-Safeway is known for its "Back to Basics" approach to insurance, focusing on what matters most: affordable premiums and efficient claims handling. They pride themselves on being a family-owned and operated company, much like Rainbow Insurance Agency. This shared commitment to family values and personal service makes Safeway a natural fit for our clients.
+    <h2>The Benefits of Safeway Insurance with Rainbow Insurance Agency</h2>
+    <p>Working with an independent agent like Rainbow Insurance Agency to secure your Safeway policy offers several key advantages. First is our local expertise. We know the Fort Worth and Dallas areas, and we understand the unique risks and requirements of Texas drivers. We can provide personalized advice that you won't get from a generic call center.</p>
 
-Furthermore, Safeway offers a variety of flexible payment options that we can help you set up. Whether you prefer to pay in full or need a monthly plan that fits your budget, we'll make sure your insurance is affordable and easy to manage. We've been serving the North Texas community since 1993, and our reputation for integrity and honesty is built on finding the best solutions for our clients.`
-    },
-    {
-      title: "Safeway Car Insurance Features & SR-22 Filings",
-      content: `Safeway specializes in providing essential car insurance coverage that meets or exceeds Texas state requirements. Some of the key features of their policies include:
+    <p>Safeway is known for its "Back to Basics" approach to insurance, focusing on what matters most: affordable premiums and efficient claims handling. They pride themselves on being a family-owned and operated company, much like Rainbow Insurance Agency. This shared commitment to family values and personal service makes Safeway a natural fit for our clients.</p>
 
-• Liability Coverage: Protects you if you're at fault in an accident that causes injury or property damage to others.
-• Physical Damage Coverage: Includes collision and comprehensive coverage to protect your own vehicle from damage.
-• SR-22 Filings: Safeway is a leader in providing SR-22 filings for drivers who need to prove financial responsibility to the state.
-• Flexible Underwriting: Safeway is often able to provide coverage for drivers that other companies might turn away.
-• 24/7 Claims Reporting: You can report a claim at any time, ensuring that the process gets started as quickly as possible.
+    <p>Furthermore, Safeway offers a variety of flexible payment options that we can help you set up. Whether you prefer to pay in full or need a monthly plan that fits your budget, we'll make sure your insurance is affordable and easy to manage. We've been serving the North Texas community since 1993, and our reputation for integrity and honesty is built on finding the best solutions for our clients.</p>
 
-At Rainbow Insurance Agency, we'll help you understand these features and ensure you have the right level of protection for your needs. We're dedicated to providing the best service and the best rates in the business, and Safeway's reliable products are a big part of that.`
-    },
-    {
-      title: "Serving the Entire DFW Metroplex with Safeway Insurance",
-      content: `Whether you're driving in the heart of Fort Worth, commuting to Dallas, or living in one of the many vibrant communities in Arlington or Garland, Safeway Insurance and Rainbow Insurance Agency have you covered. We serve the entire DFW metroplex, providing expert advice and the best insurance rates to thousands of satisfied clients.
+    <h2>Safeway Car Insurance Features & SR-22 Filings</h2>
+    <p>Safeway specializes in providing essential car insurance coverage that meets or exceeds Texas state requirements. Some of the key features of their policies include:</p>
 
-Our team is particularly skilled at helping drivers who need an SR-22 or have had challenges finding affordable coverage in the past. Safeway's competitive pricing for high-risk drivers often makes them the best choice for those looking to get back on the road legally and affordably. We believe that everyone deserves the best protection at a price they can afford.
+    <ul>
+      <li><strong>Liability Coverage:</strong> Protects you if you're at fault in an accident that causes injury or property damage to others.</li>
+      <li><strong>Physical Damage Coverage:</strong> Includes collision and comprehensive coverage to protect your own vehicle from damage.</li>
+      <li><strong>SR-22 Filings:</strong> Safeway is a leader in providing SR-22 filings for drivers who need to prove financial responsibility to the state.</li>
+      <li><strong>Flexible Underwriting:</strong> Safeway is often able to provide coverage for drivers that other companies might turn away.</li>
+      <li><strong>24/7 Claims Reporting:</strong> You can report a claim at any time, ensuring that the process gets started as quickly as possible.</li>
+    </ul>
 
-Believe in us for your Safeway insurance needs. Susan and her expert team have the experience, the carriers, and the dedication to ensure you're always getting the best value. Experience the Rainbow difference today and see why we're the top choice for insurance in Fort Worth and beyond.`
-    }
-  ];
+    <p>At Rainbow Insurance Agency, we'll help you understand these features and ensure you have the right level of protection for your needs. We're dedicated to providing the best service and the best rates in the business, and Safeway's reliable products are a big part of that.</p>
+
+    <h2>Serving the Entire DFW Metroplex with Safeway Insurance</h2>
+    <p>Whether you're driving in the heart of Fort Worth, commuting to Dallas, or living in one of the many vibrant communities in Arlington or Garland, Safeway Insurance and Rainbow Insurance Agency have you covered. We serve the entire DFW metroplex, providing expert advice and the best insurance rates to thousands of satisfied clients.</p>
+
+    <p>Our team is particularly skilled at helping drivers who need an SR-22 or have had challenges finding affordable coverage in the past. Safeway's competitive pricing for high-risk drivers often makes them the best choice for those looking to get back on the road legally and affordably. We believe that everyone deserves the best protection at a price they can afford.</p>
+
+    <p>Believe in us for your Safeway insurance needs. Susan and her expert team have the experience, the carriers, and the dedication to ensure you're always getting the best value. Experience the Rainbow difference today and see why we're the top choice for insurance in Fort Worth and beyond.</p>
+  `;
 
   return (
     <div className="bg-slate-50">
@@ -150,51 +148,15 @@ Believe in us for your Safeway insurance needs. Susan and her expert team have t
         </div>
       </div>
 
-      {/* Content Sections */}
-      <section className="py-32 relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/pinstriped-suit.png')] opacity-5" />
-        <div className="max-w-7xl mx-auto px-4 relative z-10">
-          <div className="grid grid-cols-1 gap-24">
-            {contentBlocks.map((block, idx) => (
-              <motion.div 
-                key={idx}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className={`flex flex-col lg:flex-row gap-16 items-center ${idx % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
-              >
-                <div className="lg:w-1/2">
-                  <div className={`inline-flex items-center gap-3 px-6 py-2 rounded-full text-sm font-black mb-8 shadow-sm border ${
-                    idx % 3 === 0 ? 'bg-rainbow-pink/10 text-rainbow-pink border-rainbow-pink/20' :
-                    idx % 3 === 1 ? 'bg-rainbow-gold/10 text-rainbow-gold border-rainbow-gold/20' :
-                    'bg-slate-900/10 text-slate-900 border-slate-900/20'
-                  }`}>
-                    <Zap className="w-4 h-4" />
-                    <span>Expert Safeway Advice</span>
-                  </div>
-                  <h2 className="text-4xl md:text-6xl font-black mb-8 text-gray-900 leading-tight">{block.title}</h2>
-                  <div className="text-xl text-gray-600 leading-relaxed font-medium space-y-6">
-                    {block.content.split('\n\n').map((para, pIdx) => (
-                      <p key={pIdx}>{para}</p>
-                    ))}
-                  </div>
-                </div>
-                <div className="lg:w-1/2 relative group">
-                  <div className={`absolute inset-0 rounded-[4rem] rotate-3 scale-105 opacity-10 group-hover:rotate-6 transition-transform ${
-                    idx % 3 === 0 ? 'bg-rainbow-pink' :
-                    idx % 3 === 1 ? 'bg-rainbow-gold' :
-                    'bg-slate-900'
-                  }`} />
-                  <img 
-                    src={`https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=1600&h=900&fit=crop`} 
-                    alt={block.title} 
-                    className="relative z-10 rounded-[4rem] shadow-3xl border-8 border-white w-full h-[500px] object-cover"
-                    referrerPolicy="no-referrer"
-                  />
-                </div>
-              </motion.div>
-            ))}
-          </div>
+      {/* Content Sections Area */}
+      <section className="py-24 bg-white">
+        <div className="max-w-5xl mx-auto px-4">
+          <ExpandableText 
+            className="prose prose-lg max-w-none"
+            buttonClassName="text-rainbow-pink"
+          >
+            {seoContent}
+          </ExpandableText>
         </div>
       </section>
 
