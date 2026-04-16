@@ -1,4 +1,4 @@
-import { X, User, Mail, Phone, ShieldCheck } from 'lucide-react';
+import { X, User, Mail, Phone, ShieldCheck, MessageSquare } from 'lucide-react';
 import { useState, FormEvent } from 'react';
 import { motion } from 'motion/react';
 
@@ -40,10 +40,22 @@ export default function QuoteForm({ isOpen, onClose, pageSource, isInline }: Quo
           email: formData.email,
           phone: formData.phone,
           insurance_type: formData.insuranceType,
-          message: formData.message || `New quote request for ${formData.insuranceType}`,
+          message: `New Quote Request Received:
+
+Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone}
+Type: ${formData.insuranceType.toUpperCase()}
+Source: ${pageSource || 'Main Website'}
+
+Message/Situation:
+${formData.message || 'No specific details provided.'}
+
+--
+Rainbow Insurance Agency Webform`,
           page_source: pageSource || 'Main Website',
           from_name: "Rainbow Insurance Website",
-          subject: `New Quote Request: ${formData.insuranceType.toUpperCase()}`,
+          subject: `Quote Request: ${formData.name} - ${formData.insuranceType.toUpperCase()}`,
         }),
       });
 
@@ -154,6 +166,19 @@ export default function QuoteForm({ isOpen, onClose, pageSource, isInline }: Quo
             <option value="bundle">Bundle & Save</option>
             <option value="sr22">SR-22 Filing</option>
           </select>
+        </div>
+
+        <div>
+          <label className="block text-xs font-bold text-gray-500 uppercase mb-1 flex items-center gap-2">
+            <MessageSquare className="w-3 h-3 text-rainbow-gold" /> Tell us more / Situation
+          </label>
+          <textarea 
+            rows={3}
+            placeholder="Tell us about your needs or situation..."
+            className="w-full px-3 py-2 border-2 border-gray-100 rounded-lg focus:border-rainbow-gold focus:outline-none transition-colors text-sm"
+            value={formData.message}
+            onChange={e => setFormData({...formData, message: e.target.value})}
+          />
         </div>
 
         <button 
