@@ -27,15 +27,29 @@ export default function QuoteForm({ isOpen, onClose, pageSource, isInline }: Quo
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('/api/submit-form', {
+      const accessKey = (import.meta as any).env.VITE_WEB3FORMS_ACCESS_KEY || "1befa18a-33ad-4ccb-a7e3-802a7825768a";
+      const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Accept': 'application/json'
         },
-        body: JSON.stringify({ ...formData, pageSource }),
+        body: JSON.stringify({
+          access_key: accessKey,
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          insurance_type: formData.insuranceType,
+          message: formData.message || `New quote request for ${formData.insuranceType}`,
+          page_source: pageSource || 'Main Website',
+          from_name: "Rainbow Insurance Website",
+          subject: `New Quote Request: ${formData.insuranceType.toUpperCase()}`,
+        }),
       });
 
-      if (response.ok) {
+      const result = await response.json();
+
+      if (response.ok && result.success) {
         alert('Thank you! Susan and her expert team will contact you shortly with the best rates in Fort Worth!');
         setFormData({
           name: '',

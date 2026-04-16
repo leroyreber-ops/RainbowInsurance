@@ -1,6 +1,6 @@
 import { Phone, Mail, MapPin, Clock, Send, MessageSquare, ShieldCheck, Star, Users, Award, CheckCircle2, HelpCircle, ChevronDown, ChevronUp, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-import { useState } from 'react';
+import { useState, FormEvent } from 'react';
 import SEO from '../components/SEO';
 
 interface PageProps {
@@ -20,20 +20,33 @@ export default function ContactUs({ navigateTo, openQuoteForm }: PageProps) {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('/api/submit-form', {
+      const accessKey = (import.meta as any).env.VITE_WEB3FORMS_ACCESS_KEY || "1befa18a-33ad-4ccb-a7e3-802a7825768a";
+      const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Accept': 'application/json'
         },
-        body: JSON.stringify({ ...formData, pageSource: '/contact' }),
+        body: JSON.stringify({
+          access_key: accessKey,
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          subject: `Contact Form: ${formData.subject}`,
+          message: formData.message,
+          from_name: "Rainbow Insurance Website",
+          page_source: '/contact'
+        }),
       });
 
-      if (response.ok) {
+      const result = await response.json();
+
+      if (response.ok && result.success) {
         alert('Thank you! Susan and her expert team will contact you shortly.');
         setFormData({
           name: '',
